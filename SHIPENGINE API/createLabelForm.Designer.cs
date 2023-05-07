@@ -31,6 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(createLabelForm));
             this.createLabelTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.isReturnCheckBox = new System.Windows.Forms.CheckBox();
+            this.confirmationTextBox = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.warehouseIdTextBox = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.shipDateTextBox = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.carrierCodeTextbox = new System.Windows.Forms.TextBox();
             this.apiKeyTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.packageGroupbox = new System.Windows.Forms.GroupBox();
@@ -40,13 +50,14 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.packageweightValueTextBox = new System.Windows.Forms.TextBox();
+            this.packageDimensionsUnitTextBox = new System.Windows.Forms.TextBox();
+            this.packageLengthTextBox = new System.Windows.Forms.TextBox();
+            this.packageWidthtextBox = new System.Windows.Forms.TextBox();
+            this.packageweightUnitTextBox = new System.Windows.Forms.TextBox();
+            this.packageHeightTextBox = new System.Windows.Forms.TextBox();
             this.shipFromgroupBox = new System.Windows.Forms.GroupBox();
+            this.shipFromresidentialCheckbox = new System.Windows.Forms.CheckBox();
             this.shipFrmNameTextBox = new System.Windows.Forms.TextBox();
             this.shipFrmComTextBox = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -67,6 +78,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.shipTogroupBox = new System.Windows.Forms.GroupBox();
+            this.residentialCheckbox = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.shipToNameTextBox = new System.Windows.Forms.TextBox();
             this.shipToadd1TextBox = new System.Windows.Forms.TextBox();
@@ -91,8 +103,7 @@
             this.createLabelbutton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.residentialCheckbox = new System.Windows.Forms.CheckBox();
-            this.shipFromresidentialCheckbox = new System.Windows.Forms.CheckBox();
+            this.getRequestFormbutton = new System.Windows.Forms.Button();
             this.createLabelTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.packageGroupbox.SuspendLayout();
@@ -109,11 +120,22 @@
             this.createLabelTabControl.Location = new System.Drawing.Point(0, 0);
             this.createLabelTabControl.Name = "createLabelTabControl";
             this.createLabelTabControl.SelectedIndex = 0;
-            this.createLabelTabControl.Size = new System.Drawing.Size(1104, 799);
+            this.createLabelTabControl.Size = new System.Drawing.Size(1484, 961);
             this.createLabelTabControl.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.getRequestFormbutton);
+            this.tabPage1.Controls.Add(this.isReturnCheckBox);
+            this.tabPage1.Controls.Add(this.confirmationTextBox);
+            this.tabPage1.Controls.Add(this.label33);
+            this.tabPage1.Controls.Add(this.label32);
+            this.tabPage1.Controls.Add(this.warehouseIdTextBox);
+            this.tabPage1.Controls.Add(this.label31);
+            this.tabPage1.Controls.Add(this.label30);
+            this.tabPage1.Controls.Add(this.shipDateTextBox);
+            this.tabPage1.Controls.Add(this.label29);
+            this.tabPage1.Controls.Add(this.carrierCodeTextbox);
             this.tabPage1.Controls.Add(this.apiKeyTextBox);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.packageGroupbox);
@@ -129,10 +151,98 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1096, 773);
+            this.tabPage1.Size = new System.Drawing.Size(1476, 935);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ShipEngine Label";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // isReturnCheckBox
+            // 
+            this.isReturnCheckBox.AutoSize = true;
+            this.isReturnCheckBox.Location = new System.Drawing.Point(107, 732);
+            this.isReturnCheckBox.Name = "isReturnCheckBox";
+            this.isReturnCheckBox.Size = new System.Drawing.Size(169, 17);
+            this.isReturnCheckBox.TabIndex = 54;
+            this.isReturnCheckBox.Text = "Default \"No\", Select for \"Yes\"";
+            this.isReturnCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // confirmationTextBox
+            // 
+            this.confirmationTextBox.Location = new System.Drawing.Point(107, 694);
+            this.confirmationTextBox.Name = "confirmationTextBox";
+            this.confirmationTextBox.Size = new System.Drawing.Size(206, 20);
+            this.confirmationTextBox.TabIndex = 66;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(8, 732);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(52, 13);
+            this.label33.TabIndex = 64;
+            this.label33.Text = "Return?";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(7, 697);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(77, 13);
+            this.label32.TabIndex = 63;
+            this.label32.Text = "Confirmation";
+            // 
+            // warehouseIdTextBox
+            // 
+            this.warehouseIdTextBox.Location = new System.Drawing.Point(107, 655);
+            this.warehouseIdTextBox.Name = "warehouseIdTextBox";
+            this.warehouseIdTextBox.Size = new System.Drawing.Size(206, 20);
+            this.warehouseIdTextBox.TabIndex = 62;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(8, 658);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(88, 13);
+            this.label31.TabIndex = 61;
+            this.label31.Text = "Warehouse ID";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(8, 97);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(63, 13);
+            this.label30.TabIndex = 60;
+            this.label30.Text = "Ship Date";
+            // 
+            // shipDateTextBox
+            // 
+            this.shipDateTextBox.Location = new System.Drawing.Point(107, 94);
+            this.shipDateTextBox.Name = "shipDateTextBox";
+            this.shipDateTextBox.Size = new System.Drawing.Size(206, 20);
+            this.shipDateTextBox.TabIndex = 59;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(8, 71);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(76, 13);
+            this.label29.TabIndex = 58;
+            this.label29.Text = "Carrier code";
+            // 
+            // carrierCodeTextbox
+            // 
+            this.carrierCodeTextbox.Location = new System.Drawing.Point(107, 68);
+            this.carrierCodeTextbox.Name = "carrierCodeTextbox";
+            this.carrierCodeTextbox.Size = new System.Drawing.Size(206, 20);
+            this.carrierCodeTextbox.TabIndex = 57;
             // 
             // apiKeyTextBox
             // 
@@ -159,15 +269,15 @@
             this.packageGroupbox.Controls.Add(this.label26);
             this.packageGroupbox.Controls.Add(this.label27);
             this.packageGroupbox.Controls.Add(this.label28);
-            this.packageGroupbox.Controls.Add(this.textBox25);
-            this.packageGroupbox.Controls.Add(this.textBox20);
-            this.packageGroupbox.Controls.Add(this.textBox21);
-            this.packageGroupbox.Controls.Add(this.textBox22);
-            this.packageGroupbox.Controls.Add(this.textBox24);
-            this.packageGroupbox.Controls.Add(this.textBox23);
-            this.packageGroupbox.Location = new System.Drawing.Point(7, 596);
+            this.packageGroupbox.Controls.Add(this.packageweightValueTextBox);
+            this.packageGroupbox.Controls.Add(this.packageDimensionsUnitTextBox);
+            this.packageGroupbox.Controls.Add(this.packageLengthTextBox);
+            this.packageGroupbox.Controls.Add(this.packageWidthtextBox);
+            this.packageGroupbox.Controls.Add(this.packageweightUnitTextBox);
+            this.packageGroupbox.Controls.Add(this.packageHeightTextBox);
+            this.packageGroupbox.Location = new System.Drawing.Point(11, 755);
             this.packageGroupbox.Name = "packageGroupbox";
-            this.packageGroupbox.Size = new System.Drawing.Size(306, 174);
+            this.packageGroupbox.Size = new System.Drawing.Size(308, 174);
             this.packageGroupbox.TabIndex = 54;
             this.packageGroupbox.TabStop = false;
             this.packageGroupbox.Text = "Package";
@@ -226,47 +336,47 @@
             this.label28.TabIndex = 61;
             this.label28.Text = "Weight Value";
             // 
-            // textBox25
+            // packageweightValueTextBox
             // 
-            this.textBox25.Location = new System.Drawing.Point(101, 19);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(195, 20);
-            this.textBox25.TabIndex = 35;
+            this.packageweightValueTextBox.Location = new System.Drawing.Point(101, 19);
+            this.packageweightValueTextBox.Name = "packageweightValueTextBox";
+            this.packageweightValueTextBox.Size = new System.Drawing.Size(195, 20);
+            this.packageweightValueTextBox.TabIndex = 35;
             // 
-            // textBox20
+            // packageDimensionsUnitTextBox
             // 
-            this.textBox20.Location = new System.Drawing.Point(101, 146);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(195, 20);
-            this.textBox20.TabIndex = 30;
+            this.packageDimensionsUnitTextBox.Location = new System.Drawing.Point(101, 146);
+            this.packageDimensionsUnitTextBox.Name = "packageDimensionsUnitTextBox";
+            this.packageDimensionsUnitTextBox.Size = new System.Drawing.Size(195, 20);
+            this.packageDimensionsUnitTextBox.TabIndex = 30;
             // 
-            // textBox21
+            // packageLengthTextBox
             // 
-            this.textBox21.Location = new System.Drawing.Point(101, 120);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(195, 20);
-            this.textBox21.TabIndex = 31;
+            this.packageLengthTextBox.Location = new System.Drawing.Point(101, 120);
+            this.packageLengthTextBox.Name = "packageLengthTextBox";
+            this.packageLengthTextBox.Size = new System.Drawing.Size(195, 20);
+            this.packageLengthTextBox.TabIndex = 31;
             // 
-            // textBox22
+            // packageWidthtextBox
             // 
-            this.textBox22.Location = new System.Drawing.Point(101, 97);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(195, 20);
-            this.textBox22.TabIndex = 32;
+            this.packageWidthtextBox.Location = new System.Drawing.Point(101, 97);
+            this.packageWidthtextBox.Name = "packageWidthtextBox";
+            this.packageWidthtextBox.Size = new System.Drawing.Size(195, 20);
+            this.packageWidthtextBox.TabIndex = 32;
             // 
-            // textBox24
+            // packageweightUnitTextBox
             // 
-            this.textBox24.Location = new System.Drawing.Point(101, 45);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(195, 20);
-            this.textBox24.TabIndex = 34;
+            this.packageweightUnitTextBox.Location = new System.Drawing.Point(101, 45);
+            this.packageweightUnitTextBox.Name = "packageweightUnitTextBox";
+            this.packageweightUnitTextBox.Size = new System.Drawing.Size(195, 20);
+            this.packageweightUnitTextBox.TabIndex = 34;
             // 
-            // textBox23
+            // packageHeightTextBox
             // 
-            this.textBox23.Location = new System.Drawing.Point(101, 71);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(195, 20);
-            this.textBox23.TabIndex = 33;
+            this.packageHeightTextBox.Location = new System.Drawing.Point(101, 71);
+            this.packageHeightTextBox.Name = "packageHeightTextBox";
+            this.packageHeightTextBox.Size = new System.Drawing.Size(195, 20);
+            this.packageHeightTextBox.TabIndex = 33;
             // 
             // shipFromgroupBox
             // 
@@ -290,12 +400,22 @@
             this.shipFromgroupBox.Controls.Add(this.shipFrmCountryTextBox);
             this.shipFromgroupBox.Controls.Add(this.label8);
             this.shipFromgroupBox.Controls.Add(this.label7);
-            this.shipFromgroupBox.Location = new System.Drawing.Point(7, 305);
+            this.shipFromgroupBox.Location = new System.Drawing.Point(11, 361);
             this.shipFromgroupBox.Name = "shipFromgroupBox";
-            this.shipFromgroupBox.Size = new System.Drawing.Size(306, 285);
+            this.shipFromgroupBox.Size = new System.Drawing.Size(308, 285);
             this.shipFromgroupBox.TabIndex = 50;
             this.shipFromgroupBox.TabStop = false;
             this.shipFromgroupBox.Text = "Ship From Object";
+            // 
+            // shipFromresidentialCheckbox
+            // 
+            this.shipFromresidentialCheckbox.AutoSize = true;
+            this.shipFromresidentialCheckbox.Location = new System.Drawing.Point(100, 259);
+            this.shipFromresidentialCheckbox.Name = "shipFromresidentialCheckbox";
+            this.shipFromresidentialCheckbox.Size = new System.Drawing.Size(169, 17);
+            this.shipFromresidentialCheckbox.TabIndex = 51;
+            this.shipFromresidentialCheckbox.Text = "Default \"No\", Select for \"Yes\"";
+            this.shipFromresidentialCheckbox.UseVisualStyleBackColor = true;
             // 
             // shipFrmNameTextBox
             // 
@@ -342,6 +462,7 @@
             this.shipFrmPhoneTextBox.Name = "shipFrmPhoneTextBox";
             this.shipFrmPhoneTextBox.Size = new System.Drawing.Size(195, 20);
             this.shipFrmPhoneTextBox.TabIndex = 20;
+            this.shipFrmPhoneTextBox.Text = " ";
             // 
             // label21
             // 
@@ -358,6 +479,7 @@
             this.shipFrmad2TextBox.Name = "shipFrmad2TextBox";
             this.shipFrmad2TextBox.Size = new System.Drawing.Size(195, 20);
             this.shipFrmad2TextBox.TabIndex = 21;
+            this.shipFrmad2TextBox.Text = " ";
             // 
             // label20
             // 
@@ -469,12 +591,22 @@
             this.shipTogroupBox.Controls.Add(this.label11);
             this.shipTogroupBox.Controls.Add(this.label14);
             this.shipTogroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shipTogroupBox.Location = new System.Drawing.Point(5, 64);
+            this.shipTogroupBox.Location = new System.Drawing.Point(11, 120);
             this.shipTogroupBox.Name = "shipTogroupBox";
             this.shipTogroupBox.Size = new System.Drawing.Size(308, 235);
             this.shipTogroupBox.TabIndex = 54;
             this.shipTogroupBox.TabStop = false;
             this.shipTogroupBox.Text = "Ship To Object";
+            // 
+            // residentialCheckbox
+            // 
+            this.residentialCheckbox.AutoSize = true;
+            this.residentialCheckbox.Location = new System.Drawing.Point(102, 205);
+            this.residentialCheckbox.Name = "residentialCheckbox";
+            this.residentialCheckbox.Size = new System.Drawing.Size(169, 17);
+            this.residentialCheckbox.TabIndex = 50;
+            this.residentialCheckbox.Text = "Default \"No\", Select for \"Yes\"";
+            this.residentialCheckbox.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -512,6 +644,7 @@
             this.shipToadd2TextBox.Name = "shipToadd2TextBox";
             this.shipToadd2TextBox.Size = new System.Drawing.Size(195, 20);
             this.shipToadd2TextBox.TabIndex = 11;
+            this.shipToadd2TextBox.Text = " ";
             // 
             // label19
             // 
@@ -618,7 +751,7 @@
             // labelImageBox
             // 
             this.labelImageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelImageBox.Location = new System.Drawing.Point(319, 23);
+            this.labelImageBox.Location = new System.Drawing.Point(699, 23);
             this.labelImageBox.Name = "labelImageBox";
             this.labelImageBox.Size = new System.Drawing.Size(382, 576);
             this.labelImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -629,7 +762,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(444, 3);
+            this.label2.Location = new System.Drawing.Point(824, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 17);
             this.label2.TabIndex = 5;
@@ -639,7 +772,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(810, 3);
+            this.label1.Location = new System.Drawing.Point(1190, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 17);
             this.label1.TabIndex = 4;
@@ -647,7 +780,7 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(708, 23);
+            this.richTextBox2.Location = new System.Drawing.Point(1088, 23);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(382, 576);
             this.richTextBox2.TabIndex = 3;
@@ -656,7 +789,7 @@
             // createLabelbutton
             // 
             this.createLabelbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createLabelbutton.Location = new System.Drawing.Point(319, 615);
+            this.createLabelbutton.Location = new System.Drawing.Point(699, 615);
             this.createLabelbutton.Name = "createLabelbutton";
             this.createLabelbutton.Size = new System.Drawing.Size(382, 72);
             this.createLabelbutton.TabIndex = 0;
@@ -668,7 +801,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1096, 773);
+            this.tabPage2.Size = new System.Drawing.Size(1476, 935);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ShipStation Label";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -678,36 +811,26 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1096, 773);
+            this.tabPage3.Size = new System.Drawing.Size(1476, 935);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Rating";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // residentialCheckbox
+            // getRequestFormbutton
             // 
-            this.residentialCheckbox.AutoSize = true;
-            this.residentialCheckbox.Location = new System.Drawing.Point(102, 205);
-            this.residentialCheckbox.Name = "residentialCheckbox";
-            this.residentialCheckbox.Size = new System.Drawing.Size(169, 17);
-            this.residentialCheckbox.TabIndex = 50;
-            this.residentialCheckbox.Text = "Default \"No\", Select for \"Yes\"";
-            this.residentialCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // shipFromresidentialCheckbox
-            // 
-            this.shipFromresidentialCheckbox.AutoSize = true;
-            this.shipFromresidentialCheckbox.Location = new System.Drawing.Point(100, 259);
-            this.shipFromresidentialCheckbox.Name = "shipFromresidentialCheckbox";
-            this.shipFromresidentialCheckbox.Size = new System.Drawing.Size(169, 17);
-            this.shipFromresidentialCheckbox.TabIndex = 51;
-            this.shipFromresidentialCheckbox.Text = "Default \"No\", Select for \"Yes\"";
-            this.shipFromresidentialCheckbox.UseVisualStyleBackColor = true;
+            this.getRequestFormbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.getRequestFormbutton.Location = new System.Drawing.Point(1088, 857);
+            this.getRequestFormbutton.Name = "getRequestFormbutton";
+            this.getRequestFormbutton.Size = new System.Drawing.Size(382, 72);
+            this.getRequestFormbutton.TabIndex = 67;
+            this.getRequestFormbutton.Text = "GET REQUEST";
+            this.getRequestFormbutton.Click += new System.EventHandler(this.getRequestFormbutton_Click);
             // 
             // createLabelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1102, 798);
+            this.ClientSize = new System.Drawing.Size(1484, 961);
             this.Controls.Add(this.createLabelTabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "createLabelForm";
@@ -737,12 +860,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox labelImageBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox packageweightValueTextBox;
+        private System.Windows.Forms.TextBox packageweightUnitTextBox;
+        private System.Windows.Forms.TextBox packageHeightTextBox;
+        private System.Windows.Forms.TextBox packageWidthtextBox;
+        private System.Windows.Forms.TextBox packageLengthTextBox;
+        private System.Windows.Forms.TextBox packageDimensionsUnitTextBox;
         private System.Windows.Forms.TextBox shipFrmCountryTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox shipFrmStProvTextBox;
@@ -793,5 +916,16 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.CheckBox residentialCheckbox;
         private System.Windows.Forms.CheckBox shipFromresidentialCheckbox;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox shipDateTextBox;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox carrierCodeTextbox;
+        private System.Windows.Forms.TextBox warehouseIdTextBox;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.CheckBox isReturnCheckBox;
+        private System.Windows.Forms.TextBox confirmationTextBox;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button getRequestFormbutton;
     }
 }

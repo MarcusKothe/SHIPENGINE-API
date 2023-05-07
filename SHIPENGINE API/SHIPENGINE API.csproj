@@ -71,6 +71,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Classes\AdvancedOptions.cs" />
     <EmbeddedResource Include="createLabelForm.resx">
       <DependentUpon>createLabelForm.cs</DependentUpon>
     </EmbeddedResource>
