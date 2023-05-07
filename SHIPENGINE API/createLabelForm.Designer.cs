@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(createLabelForm));
             this.createLabelTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.getRequestFormbutton = new System.Windows.Forms.Button();
             this.isReturnCheckBox = new System.Windows.Forms.CheckBox();
             this.confirmationTextBox = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -57,6 +58,8 @@
             this.packageweightUnitTextBox = new System.Windows.Forms.TextBox();
             this.packageHeightTextBox = new System.Windows.Forms.TextBox();
             this.shipFromgroupBox = new System.Windows.Forms.GroupBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.shipFrmad3TextBox = new System.Windows.Forms.TextBox();
             this.shipFromresidentialCheckbox = new System.Windows.Forms.CheckBox();
             this.shipFrmNameTextBox = new System.Windows.Forms.TextBox();
             this.shipFrmComTextBox = new System.Windows.Forms.TextBox();
@@ -78,6 +81,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.shipTogroupBox = new System.Windows.Forms.GroupBox();
+            this.shipToadd3TextBox = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.shipToPhoneTextBox = new System.Windows.Forms.TextBox();
+            this.shipToComanyNameTextbox = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.residentialCheckbox = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.shipToNameTextBox = new System.Windows.Forms.TextBox();
@@ -103,7 +112,7 @@
             this.createLabelbutton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.getRequestFormbutton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.createLabelTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.packageGroupbox.SuspendLayout();
@@ -125,6 +134,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.getRequestFormbutton);
             this.tabPage1.Controls.Add(this.isReturnCheckBox);
             this.tabPage1.Controls.Add(this.confirmationTextBox);
@@ -156,10 +166,20 @@
             this.tabPage1.Text = "ShipEngine Label";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // getRequestFormbutton
+            // 
+            this.getRequestFormbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.getRequestFormbutton.Location = new System.Drawing.Point(1088, 857);
+            this.getRequestFormbutton.Name = "getRequestFormbutton";
+            this.getRequestFormbutton.Size = new System.Drawing.Size(382, 72);
+            this.getRequestFormbutton.TabIndex = 67;
+            this.getRequestFormbutton.Text = "GET REQUEST";
+            this.getRequestFormbutton.Click += new System.EventHandler(this.getRequestFormbutton_Click);
+            // 
             // isReturnCheckBox
             // 
             this.isReturnCheckBox.AutoSize = true;
-            this.isReturnCheckBox.Location = new System.Drawing.Point(107, 732);
+            this.isReturnCheckBox.Location = new System.Drawing.Point(453, 70);
             this.isReturnCheckBox.Name = "isReturnCheckBox";
             this.isReturnCheckBox.Size = new System.Drawing.Size(169, 17);
             this.isReturnCheckBox.TabIndex = 54;
@@ -168,7 +188,7 @@
             // 
             // confirmationTextBox
             // 
-            this.confirmationTextBox.Location = new System.Drawing.Point(107, 694);
+            this.confirmationTextBox.Location = new System.Drawing.Point(416, 42);
             this.confirmationTextBox.Name = "confirmationTextBox";
             this.confirmationTextBox.Size = new System.Drawing.Size(206, 20);
             this.confirmationTextBox.TabIndex = 66;
@@ -177,7 +197,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(8, 732);
+            this.label33.Location = new System.Drawing.Point(323, 71);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(52, 13);
             this.label33.TabIndex = 64;
@@ -187,7 +207,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(7, 697);
+            this.label32.Location = new System.Drawing.Point(323, 45);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(77, 13);
             this.label32.TabIndex = 63;
@@ -195,7 +215,7 @@
             // 
             // warehouseIdTextBox
             // 
-            this.warehouseIdTextBox.Location = new System.Drawing.Point(107, 655);
+            this.warehouseIdTextBox.Location = new System.Drawing.Point(416, 7);
             this.warehouseIdTextBox.Name = "warehouseIdTextBox";
             this.warehouseIdTextBox.Size = new System.Drawing.Size(206, 20);
             this.warehouseIdTextBox.TabIndex = 62;
@@ -204,7 +224,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(8, 658);
+            this.label31.Location = new System.Drawing.Point(322, 14);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(88, 13);
             this.label31.TabIndex = 61;
@@ -275,7 +295,7 @@
             this.packageGroupbox.Controls.Add(this.packageWidthtextBox);
             this.packageGroupbox.Controls.Add(this.packageweightUnitTextBox);
             this.packageGroupbox.Controls.Add(this.packageHeightTextBox);
-            this.packageGroupbox.Location = new System.Drawing.Point(11, 755);
+            this.packageGroupbox.Location = new System.Drawing.Point(11, 430);
             this.packageGroupbox.Name = "packageGroupbox";
             this.packageGroupbox.Size = new System.Drawing.Size(308, 174);
             this.packageGroupbox.TabIndex = 54;
@@ -380,6 +400,8 @@
             // 
             // shipFromgroupBox
             // 
+            this.shipFromgroupBox.Controls.Add(this.label37);
+            this.shipFromgroupBox.Controls.Add(this.shipFrmad3TextBox);
             this.shipFromgroupBox.Controls.Add(this.shipFromresidentialCheckbox);
             this.shipFromgroupBox.Controls.Add(this.shipFrmNameTextBox);
             this.shipFromgroupBox.Controls.Add(this.shipFrmComTextBox);
@@ -400,17 +422,34 @@
             this.shipFromgroupBox.Controls.Add(this.shipFrmCountryTextBox);
             this.shipFromgroupBox.Controls.Add(this.label8);
             this.shipFromgroupBox.Controls.Add(this.label7);
-            this.shipFromgroupBox.Location = new System.Drawing.Point(11, 361);
+            this.shipFromgroupBox.Location = new System.Drawing.Point(325, 120);
             this.shipFromgroupBox.Name = "shipFromgroupBox";
-            this.shipFromgroupBox.Size = new System.Drawing.Size(308, 285);
+            this.shipFromgroupBox.Size = new System.Drawing.Size(308, 304);
             this.shipFromgroupBox.TabIndex = 50;
             this.shipFromgroupBox.TabStop = false;
             this.shipFromgroupBox.Text = "Ship From Object";
             // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(15, 155);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(77, 13);
+            this.label37.TabIndex = 55;
+            this.label37.Text = "Address Line 3";
+            // 
+            // shipFrmad3TextBox
+            // 
+            this.shipFrmad3TextBox.Location = new System.Drawing.Point(100, 152);
+            this.shipFrmad3TextBox.Name = "shipFrmad3TextBox";
+            this.shipFrmad3TextBox.Size = new System.Drawing.Size(195, 20);
+            this.shipFrmad3TextBox.TabIndex = 54;
+            this.shipFrmad3TextBox.Text = " ";
+            // 
             // shipFromresidentialCheckbox
             // 
             this.shipFromresidentialCheckbox.AutoSize = true;
-            this.shipFromresidentialCheckbox.Location = new System.Drawing.Point(100, 259);
+            this.shipFromresidentialCheckbox.Location = new System.Drawing.Point(100, 283);
             this.shipFromresidentialCheckbox.Name = "shipFromresidentialCheckbox";
             this.shipFromresidentialCheckbox.Size = new System.Drawing.Size(169, 17);
             this.shipFromresidentialCheckbox.TabIndex = 51;
@@ -434,7 +473,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(15, 233);
+            this.label23.Location = new System.Drawing.Point(15, 259);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(71, 13);
             this.label23.TabIndex = 53;
@@ -450,7 +489,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(15, 259);
+            this.label22.Location = new System.Drawing.Point(15, 283);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(65, 13);
             this.label22.TabIndex = 52;
@@ -467,7 +506,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(15, 181);
+            this.label21.Location = new System.Drawing.Point(15, 207);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(77, 13);
             this.label21.TabIndex = 51;
@@ -484,7 +523,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(15, 207);
+            this.label20.Location = new System.Drawing.Point(15, 233);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(64, 13);
             this.label20.TabIndex = 50;
@@ -492,7 +531,7 @@
             // 
             // shipFrmCityTextBox
             // 
-            this.shipFrmCityTextBox.Location = new System.Drawing.Point(100, 152);
+            this.shipFrmCityTextBox.Location = new System.Drawing.Point(100, 178);
             this.shipFrmCityTextBox.Name = "shipFrmCityTextBox";
             this.shipFrmCityTextBox.Size = new System.Drawing.Size(195, 20);
             this.shipFrmCityTextBox.TabIndex = 22;
@@ -508,7 +547,7 @@
             // 
             // shipFrmZipTextBox
             // 
-            this.shipFrmZipTextBox.Location = new System.Drawing.Point(100, 204);
+            this.shipFrmZipTextBox.Location = new System.Drawing.Point(100, 230);
             this.shipFrmZipTextBox.Name = "shipFrmZipTextBox";
             this.shipFrmZipTextBox.Size = new System.Drawing.Size(195, 20);
             this.shipFrmZipTextBox.TabIndex = 23;
@@ -524,7 +563,7 @@
             // 
             // shipFrmStProvTextBox
             // 
-            this.shipFrmStProvTextBox.Location = new System.Drawing.Point(100, 178);
+            this.shipFrmStProvTextBox.Location = new System.Drawing.Point(100, 204);
             this.shipFrmStProvTextBox.Name = "shipFrmStProvTextBox";
             this.shipFrmStProvTextBox.Size = new System.Drawing.Size(195, 20);
             this.shipFrmStProvTextBox.TabIndex = 24;
@@ -549,7 +588,7 @@
             // 
             // shipFrmCountryTextBox
             // 
-            this.shipFrmCountryTextBox.Location = new System.Drawing.Point(100, 230);
+            this.shipFrmCountryTextBox.Location = new System.Drawing.Point(100, 256);
             this.shipFrmCountryTextBox.Name = "shipFrmCountryTextBox";
             this.shipFrmCountryTextBox.Size = new System.Drawing.Size(195, 20);
             this.shipFrmCountryTextBox.TabIndex = 29;
@@ -566,7 +605,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 155);
+            this.label7.Location = new System.Drawing.Point(15, 181);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 37;
@@ -574,6 +613,12 @@
             // 
             // shipTogroupBox
             // 
+            this.shipTogroupBox.Controls.Add(this.shipToadd3TextBox);
+            this.shipTogroupBox.Controls.Add(this.label36);
+            this.shipTogroupBox.Controls.Add(this.label35);
+            this.shipTogroupBox.Controls.Add(this.shipToPhoneTextBox);
+            this.shipTogroupBox.Controls.Add(this.shipToComanyNameTextbox);
+            this.shipTogroupBox.Controls.Add(this.label34);
             this.shipTogroupBox.Controls.Add(this.residentialCheckbox);
             this.shipTogroupBox.Controls.Add(this.label6);
             this.shipTogroupBox.Controls.Add(this.shipToNameTextBox);
@@ -593,15 +638,64 @@
             this.shipTogroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shipTogroupBox.Location = new System.Drawing.Point(11, 120);
             this.shipTogroupBox.Name = "shipTogroupBox";
-            this.shipTogroupBox.Size = new System.Drawing.Size(308, 235);
+            this.shipTogroupBox.Size = new System.Drawing.Size(308, 304);
             this.shipTogroupBox.TabIndex = 54;
             this.shipTogroupBox.TabStop = false;
             this.shipTogroupBox.Text = "Ship To Object";
             // 
+            // shipToadd3TextBox
+            // 
+            this.shipToadd3TextBox.Location = new System.Drawing.Point(101, 154);
+            this.shipToadd3TextBox.Name = "shipToadd3TextBox";
+            this.shipToadd3TextBox.Size = new System.Drawing.Size(195, 20);
+            this.shipToadd3TextBox.TabIndex = 56;
+            this.shipToadd3TextBox.Text = " ";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(17, 157);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(77, 13);
+            this.label36.TabIndex = 55;
+            this.label36.Text = "Address Line 3";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(17, 79);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(78, 13);
+            this.label35.TabIndex = 54;
+            this.label35.Text = "Phone Number";
+            // 
+            // shipToPhoneTextBox
+            // 
+            this.shipToPhoneTextBox.Location = new System.Drawing.Point(102, 76);
+            this.shipToPhoneTextBox.Name = "shipToPhoneTextBox";
+            this.shipToPhoneTextBox.Size = new System.Drawing.Size(195, 20);
+            this.shipToPhoneTextBox.TabIndex = 53;
+            // 
+            // shipToComanyNameTextbox
+            // 
+            this.shipToComanyNameTextbox.Location = new System.Drawing.Point(102, 50);
+            this.shipToComanyNameTextbox.Name = "shipToComanyNameTextbox";
+            this.shipToComanyNameTextbox.Size = new System.Drawing.Size(195, 20);
+            this.shipToComanyNameTextbox.TabIndex = 52;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(17, 53);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(82, 13);
+            this.label34.TabIndex = 51;
+            this.label34.Text = "Company Name";
+            // 
             // residentialCheckbox
             // 
             this.residentialCheckbox.AutoSize = true;
-            this.residentialCheckbox.Location = new System.Drawing.Point(102, 205);
+            this.residentialCheckbox.Location = new System.Drawing.Point(101, 283);
             this.residentialCheckbox.Name = "residentialCheckbox";
             this.residentialCheckbox.Size = new System.Drawing.Size(169, 17);
             this.residentialCheckbox.TabIndex = 50;
@@ -626,21 +720,21 @@
             // 
             // shipToadd1TextBox
             // 
-            this.shipToadd1TextBox.Location = new System.Drawing.Point(102, 50);
+            this.shipToadd1TextBox.Location = new System.Drawing.Point(102, 102);
             this.shipToadd1TextBox.Name = "shipToadd1TextBox";
             this.shipToadd1TextBox.Size = new System.Drawing.Size(195, 20);
             this.shipToadd1TextBox.TabIndex = 9;
             // 
             // shipToCityTextBox
             // 
-            this.shipToCityTextBox.Location = new System.Drawing.Point(102, 102);
+            this.shipToCityTextBox.Location = new System.Drawing.Point(101, 180);
             this.shipToCityTextBox.Name = "shipToCityTextBox";
             this.shipToCityTextBox.Size = new System.Drawing.Size(195, 20);
             this.shipToCityTextBox.TabIndex = 10;
             // 
             // shipToadd2TextBox
             // 
-            this.shipToadd2TextBox.Location = new System.Drawing.Point(102, 76);
+            this.shipToadd2TextBox.Location = new System.Drawing.Point(102, 128);
             this.shipToadd2TextBox.Name = "shipToadd2TextBox";
             this.shipToadd2TextBox.Size = new System.Drawing.Size(195, 20);
             this.shipToadd2TextBox.TabIndex = 11;
@@ -649,7 +743,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(17, 131);
+            this.label19.Location = new System.Drawing.Point(17, 209);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(77, 13);
             this.label19.TabIndex = 49;
@@ -657,7 +751,7 @@
             // 
             // shipToStProvTextBox
             // 
-            this.shipToStProvTextBox.Location = new System.Drawing.Point(102, 128);
+            this.shipToStProvTextBox.Location = new System.Drawing.Point(101, 206);
             this.shipToStProvTextBox.MaxLength = 100;
             this.shipToStProvTextBox.Name = "shipToStProvTextBox";
             this.shipToStProvTextBox.Size = new System.Drawing.Size(195, 20);
@@ -666,7 +760,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(17, 183);
+            this.label18.Location = new System.Drawing.Point(17, 261);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(71, 13);
             this.label18.TabIndex = 48;
@@ -674,7 +768,7 @@
             // 
             // shipToZipTextBox
             // 
-            this.shipToZipTextBox.Location = new System.Drawing.Point(102, 154);
+            this.shipToZipTextBox.Location = new System.Drawing.Point(101, 232);
             this.shipToZipTextBox.Name = "shipToZipTextBox";
             this.shipToZipTextBox.Size = new System.Drawing.Size(195, 20);
             this.shipToZipTextBox.TabIndex = 13;
@@ -682,7 +776,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(17, 209);
+            this.label17.Location = new System.Drawing.Point(17, 283);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 13);
             this.label17.TabIndex = 47;
@@ -690,7 +784,7 @@
             // 
             // shipToCntryCdTextBox
             // 
-            this.shipToCntryCdTextBox.Location = new System.Drawing.Point(102, 180);
+            this.shipToCntryCdTextBox.Location = new System.Drawing.Point(101, 258);
             this.shipToCntryCdTextBox.Name = "shipToCntryCdTextBox";
             this.shipToCntryCdTextBox.Size = new System.Drawing.Size(195, 20);
             this.shipToCntryCdTextBox.TabIndex = 14;
@@ -698,7 +792,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(17, 53);
+            this.label16.Location = new System.Drawing.Point(17, 105);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(77, 13);
             this.label16.TabIndex = 46;
@@ -707,7 +801,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(15, 157);
+            this.label15.Location = new System.Drawing.Point(17, 235);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(64, 13);
             this.label15.TabIndex = 45;
@@ -716,7 +810,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 79);
+            this.label11.Location = new System.Drawing.Point(17, 131);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 13);
             this.label11.TabIndex = 41;
@@ -725,7 +819,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(17, 105);
+            this.label14.Location = new System.Drawing.Point(17, 183);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(63, 13);
             this.label14.TabIndex = 44;
@@ -816,15 +910,14 @@
             this.tabPage3.Text = "Rating";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // getRequestFormbutton
+            // groupBox1
             // 
-            this.getRequestFormbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.getRequestFormbutton.Location = new System.Drawing.Point(1088, 857);
-            this.getRequestFormbutton.Name = "getRequestFormbutton";
-            this.getRequestFormbutton.Size = new System.Drawing.Size(382, 72);
-            this.getRequestFormbutton.TabIndex = 67;
-            this.getRequestFormbutton.Text = "GET REQUEST";
-            this.getRequestFormbutton.Click += new System.EventHandler(this.getRequestFormbutton_Click);
+            this.groupBox1.Location = new System.Drawing.Point(325, 430);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(308, 174);
+            this.groupBox1.TabIndex = 62;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "???";
             // 
             // createLabelForm
             // 
@@ -894,7 +987,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -927,5 +1019,15 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Button getRequestFormbutton;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox shipToPhoneTextBox;
+        private System.Windows.Forms.TextBox shipToComanyNameTextbox;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox shipFrmad3TextBox;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox shipToadd3TextBox;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

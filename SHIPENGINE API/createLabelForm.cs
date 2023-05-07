@@ -45,10 +45,10 @@ namespace SHIPENGINE_API
                 string ship_date = shipDateTextBox.Text;
                 string shipToaddressLine1 = shipToadd1TextBox.Text;
                 string shipToaddressLine2 = shipToadd2TextBox.Text;
-                string shipToaddressLine3 = "";
+                string shipToaddressLine3 = shipToadd3TextBox.Text;
                 string shipTocityLocality = shipToCityTextBox.Text;
-                string shiptoPhone = "555-555-5555";
-                string shipToCompany = "";
+                string shiptoPhone = shipToPhoneTextBox.Text;
+                string shipToCompany = shipToComanyNameTextbox.Text;
                 string shipTostateProvince = shipToStProvTextBox.Text;
                 int shipTopostalCode = int.Parse(shipToZipTextBox.Text);
                 string shipTocountryCode = shipToCntryCdTextBox.Text;
@@ -64,9 +64,9 @@ namespace SHIPENGINE_API
                 string shipFromCname = shipFrmComTextBox.Text;
                 string shipFromaddressLine1 = shipFrmad1TextBox.Text;
                 string shipFromaddressLine2 = shipFrmad2TextBox.Text;
-                string shipFromaddressLine3 = "";
+                string shipFromaddressLine3 = shipFrmad3TextBox.Text;
                 string shipFromPhone = shipFrmPhoneTextBox.Text;
-                string shipFromCompany = "";
+                string shipFromCompany = shipFrmComTextBox.Text;
                 string shipFromcityLocality = shipFrmCityTextBox.Text;
                 string shipFromstateProvince = shipFrmStProvTextBox.Text;
                 string shipFrompostalCode = shipFrmZipTextBox.Text;
