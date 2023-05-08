@@ -883,7 +883,7 @@
             // createLabelbutton
             // 
             this.createLabelbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createLabelbutton.Location = new System.Drawing.Point(699, 615);
+            this.createLabelbutton.Location = new System.Drawing.Point(133, 610);
             this.createLabelbutton.Name = "createLabelbutton";
             this.createLabelbutton.Size = new System.Drawing.Size(382, 72);
             this.createLabelbutton.TabIndex = 0;
