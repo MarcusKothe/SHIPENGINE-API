@@ -562,23 +562,23 @@ namespace SHIPENGINE_API
 
                             IList<T> GetAllControls<T>(Control control) where T : Control
                             {
-                                var lst = new List<T>();
+                                var TextBoxes = new List<T>();
                                 foreach (Control item in control.Controls)
                                 {
                                     var ctr = item as T;
                                     if (ctr != null)
-                                        lst.Add(ctr);
+                                        TextBoxes.Add(ctr);
                                     else
-                                        lst.AddRange(GetAllControls<T>(item));
+                                        TextBoxes.AddRange(GetAllControls<T>(item));
                                 }
-                                return lst;
+                                return TextBoxes;
                             }
 
-                            var textBoxes = GetAllControls<System.Windows.Forms.TextBox>(this);
-                            foreach (System.Windows.Forms.TextBox lst in textBoxes)
+                            var textBoxesList = GetAllControls<System.Windows.Forms.TextBox>(this);
+                            foreach (System.Windows.Forms.TextBox TextBoxes in textBoxesList)
                             {
                                 //"    Zero Cool"
-                                lst.Text = lst.Text.Replace("    ", "");
+                                TextBoxes.Text = TextBoxes.Text.Replace("    ", "");
                             }
                         }
                     }
