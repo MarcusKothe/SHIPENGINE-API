@@ -9,10 +9,12 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace SHIPENGINE_API
@@ -32,9 +34,9 @@ namespace SHIPENGINE_API
         private void createLabelbutton_Click(object sender, EventArgs e)
         {
             //Set color and font
-            richTextBox2.Text = string.Empty;
-            richTextBox2.ForeColor = Color.Black;
-            richTextBox2.Font = new Font(richTextBox2.Font, FontStyle.Regular);
+            responseBodyrichTextbox.Text = string.Empty;
+            responseBodyrichTextbox.ForeColor = Color.Black;
+            responseBodyrichTextbox.Font = new Font(responseBodyrichTextbox.Font, FontStyle.Regular);
 
             try
             {
@@ -259,9 +261,9 @@ namespace SHIPENGINE_API
                 stream = requestResponse.GetResponseStream();
 
                 StreamReader parseResponse = new StreamReader(stream);
-                richTextBox2.Text = parseResponse.ReadToEnd();
+                responseBodyrichTextbox.Text = parseResponse.ReadToEnd();
 
-                string responseBodyText = richTextBox2.Text;
+                string responseBodyText = responseBodyrichTextbox.Text;
 
                 // GET LABEL IMAGE
                 //LABEL_DOWNLOAD OBJECT
@@ -293,10 +295,10 @@ namespace SHIPENGINE_API
             catch (Exception crateLabelError)
             {
                 //Make color red and bold
-                richTextBox2.ForeColor = Color.Red;
-                richTextBox2.Font = new Font(richTextBox2.Font, FontStyle.Bold);
+                responseBodyrichTextbox.ForeColor = Color.Red;
+                responseBodyrichTextbox.Font = new Font(responseBodyrichTextbox.Font, FontStyle.Bold);
 
-                richTextBox2.Text = crateLabelError.Message;
+                responseBodyrichTextbox.Text = crateLabelError.Message;
             }
 
         }
@@ -305,6 +307,76 @@ namespace SHIPENGINE_API
         {
             getRequestForm form2 = new getRequestForm();
             form2.ShowDialog();
+
+        }
+
+        private void apiKeyTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+            int warehousenumber = 0;
+
+            try
+            {
+                //URL SOURCE
+                string URLstring = "https://api.shipengine.com/v1/warehouses";
+
+                //REQUEST
+                WebRequest requestObject = WebRequest.Create(URLstring);
+                requestObject.Method = "GET";
+
+                //SS AUTH
+                //string apiKey = ssAPIkeyTextBox.Text;
+                //string apiSecret = ssApiSecretTextBox.Text;
+                //requestObject.Credentials = new NetworkCredential(apiKey, apiSecret);
+
+                //SE AUTH
+                string engineApiKey = apiKeyTextBox.Text;
+                requestObject.Headers.Add("API-key", engineApiKey);
+
+                //RESPONSE
+                HttpWebResponse responseObjectGet = null;
+                responseObjectGet = (HttpWebResponse)requestObject.GetResponse();
+
+                //DATA
+                string streamResponse = null;
+                using (Stream stream = responseObjectGet.GetResponseStream())
+                {
+                    StreamReader responseRead = new StreamReader(stream);
+                    streamResponse = responseRead.ReadToEnd();
+
+
+                    //Get all warehouseId's
+                    using (var reader = new StringReader(streamResponse))
+                    {
+                        for(string currentLine = reader.ReadLine(); currentLine != null; currentLine = reader.ReadLine())
+                        {
+
+                            if(currentLine.Contains("warehouse_id") == true)
+                            {
+                                //Replace "warehouse_id": " ",
+                                string WHID = currentLine.Replace(" \"warehouse_id\": \"", "");
+                                string WHID2 = WHID.Replace("\",", "");
+
+                                //add to textbox
+                                responseBodyrichTextbox.Text = WHID2 + "," + responseBodyrichTextbox.Text;
+
+                            }
+                            else
+                            {
+                                currentLine.Replace(currentLine, "");
+                            }
+
+                        }
+                    }
+
+                }
+            }
+            catch (Exception HTTPexception)
+            {
+                responseBodyrichTextbox.Text = (HTTPexception.Message);
+            }
+
+
 
         }
     }

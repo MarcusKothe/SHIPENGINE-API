@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(createLabelForm));
             this.createLabelTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.getRequestFormbutton = new System.Windows.Forms.Button();
             this.isReturnCheckBox = new System.Windows.Forms.CheckBox();
             this.confirmationTextBox = new System.Windows.Forms.TextBox();
@@ -108,11 +110,11 @@
             this.labelImageBox = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.responseBodyrichTextbox = new System.Windows.Forms.RichTextBox();
             this.createLabelbutton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.createLabelTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.packageGroupbox.SuspendLayout();
@@ -125,15 +127,18 @@
             // 
             this.createLabelTabControl.Controls.Add(this.tabPage1);
             this.createLabelTabControl.Controls.Add(this.tabPage2);
+            this.createLabelTabControl.Controls.Add(this.tabPage4);
             this.createLabelTabControl.Controls.Add(this.tabPage3);
             this.createLabelTabControl.Location = new System.Drawing.Point(0, 0);
             this.createLabelTabControl.Name = "createLabelTabControl";
             this.createLabelTabControl.SelectedIndex = 0;
-            this.createLabelTabControl.Size = new System.Drawing.Size(1484, 961);
+            this.createLabelTabControl.Size = new System.Drawing.Size(1425, 965);
             this.createLabelTabControl.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
+            this.tabPage1.Controls.Add(this.listBox1);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.getRequestFormbutton);
             this.tabPage1.Controls.Add(this.isReturnCheckBox);
@@ -156,20 +161,36 @@
             this.tabPage1.Controls.Add(this.labelImageBox);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.richTextBox2);
+            this.tabPage1.Controls.Add(this.responseBodyrichTextbox);
             this.tabPage1.Controls.Add(this.createLabelbutton);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1476, 935);
+            this.tabPage1.Size = new System.Drawing.Size(1417, 939);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ShipEngine Label";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(662, 632);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(251, 238);
+            this.listBox1.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(325, 430);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(308, 174);
+            this.groupBox1.TabIndex = 62;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "???";
             // 
             // getRequestFormbutton
             // 
             this.getRequestFormbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.getRequestFormbutton.Location = new System.Drawing.Point(1088, 857);
+            this.getRequestFormbutton.Location = new System.Drawing.Point(1028, 821);
             this.getRequestFormbutton.Name = "getRequestFormbutton";
             this.getRequestFormbutton.Size = new System.Drawing.Size(382, 72);
             this.getRequestFormbutton.TabIndex = 67;
@@ -188,6 +209,7 @@
             // 
             // confirmationTextBox
             // 
+            this.confirmationTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.confirmationTextBox.Location = new System.Drawing.Point(416, 42);
             this.confirmationTextBox.Name = "confirmationTextBox";
             this.confirmationTextBox.Size = new System.Drawing.Size(206, 20);
@@ -215,6 +237,7 @@
             // 
             // warehouseIdTextBox
             // 
+            this.warehouseIdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.warehouseIdTextBox.Location = new System.Drawing.Point(416, 7);
             this.warehouseIdTextBox.Name = "warehouseIdTextBox";
             this.warehouseIdTextBox.Size = new System.Drawing.Size(206, 20);
@@ -242,6 +265,7 @@
             // 
             // shipDateTextBox
             // 
+            this.shipDateTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipDateTextBox.Location = new System.Drawing.Point(107, 94);
             this.shipDateTextBox.Name = "shipDateTextBox";
             this.shipDateTextBox.Size = new System.Drawing.Size(206, 20);
@@ -259,6 +283,7 @@
             // 
             // carrierCodeTextbox
             // 
+            this.carrierCodeTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.carrierCodeTextbox.Location = new System.Drawing.Point(107, 68);
             this.carrierCodeTextbox.Name = "carrierCodeTextbox";
             this.carrierCodeTextbox.Size = new System.Drawing.Size(206, 20);
@@ -266,10 +291,12 @@
             // 
             // apiKeyTextBox
             // 
+            this.apiKeyTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.apiKeyTextBox.Location = new System.Drawing.Point(107, 11);
             this.apiKeyTextBox.Name = "apiKeyTextBox";
             this.apiKeyTextBox.Size = new System.Drawing.Size(206, 20);
             this.apiKeyTextBox.TabIndex = 56;
+            this.apiKeyTextBox.TextChanged += new System.EventHandler(this.apiKeyTextBox_TextChanged);
             // 
             // label5
             // 
@@ -350,7 +377,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(15, 22);
+            this.label28.Location = new System.Drawing.Point(17, 18);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(71, 13);
             this.label28.TabIndex = 61;
@@ -358,42 +385,48 @@
             // 
             // packageweightValueTextBox
             // 
-            this.packageweightValueTextBox.Location = new System.Drawing.Point(101, 19);
+            this.packageweightValueTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
+            this.packageweightValueTextBox.Location = new System.Drawing.Point(102, 15);
             this.packageweightValueTextBox.Name = "packageweightValueTextBox";
             this.packageweightValueTextBox.Size = new System.Drawing.Size(195, 20);
             this.packageweightValueTextBox.TabIndex = 35;
             // 
             // packageDimensionsUnitTextBox
             // 
-            this.packageDimensionsUnitTextBox.Location = new System.Drawing.Point(101, 146);
+            this.packageDimensionsUnitTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
+            this.packageDimensionsUnitTextBox.Location = new System.Drawing.Point(102, 146);
             this.packageDimensionsUnitTextBox.Name = "packageDimensionsUnitTextBox";
             this.packageDimensionsUnitTextBox.Size = new System.Drawing.Size(195, 20);
             this.packageDimensionsUnitTextBox.TabIndex = 30;
             // 
             // packageLengthTextBox
             // 
-            this.packageLengthTextBox.Location = new System.Drawing.Point(101, 120);
+            this.packageLengthTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
+            this.packageLengthTextBox.Location = new System.Drawing.Point(102, 119);
             this.packageLengthTextBox.Name = "packageLengthTextBox";
             this.packageLengthTextBox.Size = new System.Drawing.Size(195, 20);
             this.packageLengthTextBox.TabIndex = 31;
             // 
             // packageWidthtextBox
             // 
-            this.packageWidthtextBox.Location = new System.Drawing.Point(101, 97);
+            this.packageWidthtextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
+            this.packageWidthtextBox.Location = new System.Drawing.Point(102, 93);
             this.packageWidthtextBox.Name = "packageWidthtextBox";
             this.packageWidthtextBox.Size = new System.Drawing.Size(195, 20);
             this.packageWidthtextBox.TabIndex = 32;
             // 
             // packageweightUnitTextBox
             // 
-            this.packageweightUnitTextBox.Location = new System.Drawing.Point(101, 45);
+            this.packageweightUnitTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
+            this.packageweightUnitTextBox.Location = new System.Drawing.Point(102, 41);
             this.packageweightUnitTextBox.Name = "packageweightUnitTextBox";
             this.packageweightUnitTextBox.Size = new System.Drawing.Size(195, 20);
             this.packageweightUnitTextBox.TabIndex = 34;
             // 
             // packageHeightTextBox
             // 
-            this.packageHeightTextBox.Location = new System.Drawing.Point(101, 71);
+            this.packageHeightTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
+            this.packageHeightTextBox.Location = new System.Drawing.Point(102, 67);
             this.packageHeightTextBox.Name = "packageHeightTextBox";
             this.packageHeightTextBox.Size = new System.Drawing.Size(195, 20);
             this.packageHeightTextBox.TabIndex = 33;
@@ -440,6 +473,7 @@
             // 
             // shipFrmad3TextBox
             // 
+            this.shipFrmad3TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipFrmad3TextBox.Location = new System.Drawing.Point(100, 152);
             this.shipFrmad3TextBox.Name = "shipFrmad3TextBox";
             this.shipFrmad3TextBox.Size = new System.Drawing.Size(195, 20);
@@ -458,6 +492,7 @@
             // 
             // shipFrmNameTextBox
             // 
+            this.shipFrmNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipFrmNameTextBox.Location = new System.Drawing.Point(100, 22);
             this.shipFrmNameTextBox.Name = "shipFrmNameTextBox";
             this.shipFrmNameTextBox.Size = new System.Drawing.Size(195, 20);
@@ -465,6 +500,7 @@
             // 
             // shipFrmComTextBox
             // 
+            this.shipFrmComTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipFrmComTextBox.Location = new System.Drawing.Point(100, 48);
             this.shipFrmComTextBox.Name = "shipFrmComTextBox";
             this.shipFrmComTextBox.Size = new System.Drawing.Size(195, 20);
@@ -481,6 +517,7 @@
             // 
             // shipFrmad1TextBox
             // 
+            this.shipFrmad1TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipFrmad1TextBox.Location = new System.Drawing.Point(100, 100);
             this.shipFrmad1TextBox.Name = "shipFrmad1TextBox";
             this.shipFrmad1TextBox.Size = new System.Drawing.Size(195, 20);
@@ -497,6 +534,7 @@
             // 
             // shipFrmPhoneTextBox
             // 
+            this.shipFrmPhoneTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipFrmPhoneTextBox.Location = new System.Drawing.Point(100, 74);
             this.shipFrmPhoneTextBox.Name = "shipFrmPhoneTextBox";
             this.shipFrmPhoneTextBox.Size = new System.Drawing.Size(195, 20);
@@ -514,6 +552,7 @@
             // 
             // shipFrmad2TextBox
             // 
+            this.shipFrmad2TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipFrmad2TextBox.Location = new System.Drawing.Point(100, 126);
             this.shipFrmad2TextBox.Name = "shipFrmad2TextBox";
             this.shipFrmad2TextBox.Size = new System.Drawing.Size(195, 20);
@@ -531,6 +570,7 @@
             // 
             // shipFrmCityTextBox
             // 
+            this.shipFrmCityTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipFrmCityTextBox.Location = new System.Drawing.Point(100, 178);
             this.shipFrmCityTextBox.Name = "shipFrmCityTextBox";
             this.shipFrmCityTextBox.Size = new System.Drawing.Size(195, 20);
@@ -547,6 +587,7 @@
             // 
             // shipFrmZipTextBox
             // 
+            this.shipFrmZipTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipFrmZipTextBox.Location = new System.Drawing.Point(100, 230);
             this.shipFrmZipTextBox.Name = "shipFrmZipTextBox";
             this.shipFrmZipTextBox.Size = new System.Drawing.Size(195, 20);
@@ -563,6 +604,7 @@
             // 
             // shipFrmStProvTextBox
             // 
+            this.shipFrmStProvTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipFrmStProvTextBox.Location = new System.Drawing.Point(100, 204);
             this.shipFrmStProvTextBox.Name = "shipFrmStProvTextBox";
             this.shipFrmStProvTextBox.Size = new System.Drawing.Size(195, 20);
@@ -588,6 +630,7 @@
             // 
             // shipFrmCountryTextBox
             // 
+            this.shipFrmCountryTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipFrmCountryTextBox.Location = new System.Drawing.Point(100, 256);
             this.shipFrmCountryTextBox.Name = "shipFrmCountryTextBox";
             this.shipFrmCountryTextBox.Size = new System.Drawing.Size(195, 20);
@@ -645,6 +688,7 @@
             // 
             // shipToadd3TextBox
             // 
+            this.shipToadd3TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipToadd3TextBox.Location = new System.Drawing.Point(101, 154);
             this.shipToadd3TextBox.Name = "shipToadd3TextBox";
             this.shipToadd3TextBox.Size = new System.Drawing.Size(195, 20);
@@ -671,6 +715,7 @@
             // 
             // shipToPhoneTextBox
             // 
+            this.shipToPhoneTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipToPhoneTextBox.Location = new System.Drawing.Point(102, 76);
             this.shipToPhoneTextBox.Name = "shipToPhoneTextBox";
             this.shipToPhoneTextBox.Size = new System.Drawing.Size(195, 20);
@@ -678,6 +723,7 @@
             // 
             // shipToComanyNameTextbox
             // 
+            this.shipToComanyNameTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipToComanyNameTextbox.Location = new System.Drawing.Point(102, 50);
             this.shipToComanyNameTextbox.Name = "shipToComanyNameTextbox";
             this.shipToComanyNameTextbox.Size = new System.Drawing.Size(195, 20);
@@ -713,6 +759,7 @@
             // 
             // shipToNameTextBox
             // 
+            this.shipToNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipToNameTextBox.Location = new System.Drawing.Point(102, 24);
             this.shipToNameTextBox.Name = "shipToNameTextBox";
             this.shipToNameTextBox.Size = new System.Drawing.Size(195, 20);
@@ -720,6 +767,7 @@
             // 
             // shipToadd1TextBox
             // 
+            this.shipToadd1TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipToadd1TextBox.Location = new System.Drawing.Point(102, 102);
             this.shipToadd1TextBox.Name = "shipToadd1TextBox";
             this.shipToadd1TextBox.Size = new System.Drawing.Size(195, 20);
@@ -727,6 +775,7 @@
             // 
             // shipToCityTextBox
             // 
+            this.shipToCityTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipToCityTextBox.Location = new System.Drawing.Point(101, 180);
             this.shipToCityTextBox.Name = "shipToCityTextBox";
             this.shipToCityTextBox.Size = new System.Drawing.Size(195, 20);
@@ -734,6 +783,7 @@
             // 
             // shipToadd2TextBox
             // 
+            this.shipToadd2TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipToadd2TextBox.Location = new System.Drawing.Point(102, 128);
             this.shipToadd2TextBox.Name = "shipToadd2TextBox";
             this.shipToadd2TextBox.Size = new System.Drawing.Size(195, 20);
@@ -751,6 +801,7 @@
             // 
             // shipToStProvTextBox
             // 
+            this.shipToStProvTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipToStProvTextBox.Location = new System.Drawing.Point(101, 206);
             this.shipToStProvTextBox.MaxLength = 100;
             this.shipToStProvTextBox.Name = "shipToStProvTextBox";
@@ -768,6 +819,7 @@
             // 
             // shipToZipTextBox
             // 
+            this.shipToZipTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipToZipTextBox.Location = new System.Drawing.Point(101, 232);
             this.shipToZipTextBox.Name = "shipToZipTextBox";
             this.shipToZipTextBox.Size = new System.Drawing.Size(195, 20);
@@ -784,6 +836,7 @@
             // 
             // shipToCntryCdTextBox
             // 
+            this.shipToCntryCdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
             this.shipToCntryCdTextBox.Location = new System.Drawing.Point(101, 258);
             this.shipToCntryCdTextBox.Name = "shipToCntryCdTextBox";
             this.shipToCntryCdTextBox.Size = new System.Drawing.Size(195, 20);
@@ -837,15 +890,16 @@
             // 
             // serviceCodeTextBox
             // 
-            this.serviceCodeTextBox.Location = new System.Drawing.Point(108, 42);
+            this.serviceCodeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
+            this.serviceCodeTextBox.Location = new System.Drawing.Point(107, 42);
             this.serviceCodeTextBox.Name = "serviceCodeTextBox";
-            this.serviceCodeTextBox.Size = new System.Drawing.Size(205, 20);
+            this.serviceCodeTextBox.Size = new System.Drawing.Size(206, 20);
             this.serviceCodeTextBox.TabIndex = 7;
             // 
             // labelImageBox
             // 
             this.labelImageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelImageBox.Location = new System.Drawing.Point(699, 23);
+            this.labelImageBox.Location = new System.Drawing.Point(639, 28);
             this.labelImageBox.Name = "labelImageBox";
             this.labelImageBox.Size = new System.Drawing.Size(382, 576);
             this.labelImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -856,7 +910,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(824, 3);
+            this.label2.Location = new System.Drawing.Point(764, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 17);
             this.label2.TabIndex = 5;
@@ -866,19 +920,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1190, 3);
+            this.label1.Location = new System.Drawing.Point(1130, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "RESPONSE BODY";
             // 
-            // richTextBox2
+            // responseBodyrichTextbox
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(1088, 23);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(382, 576);
-            this.richTextBox2.TabIndex = 3;
-            this.richTextBox2.Text = "";
+            this.responseBodyrichTextbox.Location = new System.Drawing.Point(1028, 28);
+            this.responseBodyrichTextbox.Name = "responseBodyrichTextbox";
+            this.responseBodyrichTextbox.Size = new System.Drawing.Size(382, 576);
+            this.responseBodyrichTextbox.TabIndex = 3;
+            this.responseBodyrichTextbox.Text = "";
             // 
             // createLabelbutton
             // 
@@ -895,35 +949,36 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1476, 935);
+            this.tabPage2.Size = new System.Drawing.Size(1417, 939);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ShipStation Label";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1417, 939);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Get Request";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1476, 935);
+            this.tabPage3.Size = new System.Drawing.Size(1417, 939);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Rating";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(325, 430);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(308, 174);
-            this.groupBox1.TabIndex = 62;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "???";
             // 
             // createLabelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1484, 961);
+            this.ClientSize = new System.Drawing.Size(1430, 965);
             this.Controls.Add(this.createLabelTabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "createLabelForm";
@@ -949,7 +1004,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button createLabelbutton;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox responseBodyrichTextbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox labelImageBox;
         private System.Windows.Forms.Label label2;
@@ -1029,5 +1084,7 @@
         private System.Windows.Forms.TextBox shipToadd3TextBox;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
