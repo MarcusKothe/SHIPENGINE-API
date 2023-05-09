@@ -29,7 +29,12 @@ namespace SHIPENGINE_API
 
         private void createLabelForm_Load(object sender, EventArgs e)
         {
-          
+
+            shipDateTimePicker.MinDate = DateTime.Today;
+
+            shipDateTimePicker.Format = DateTimePickerFormat.Custom;
+            shipDateTimePicker.CustomFormat = "dd-MM-yyyy";
+
         }
 
 
@@ -560,6 +565,8 @@ namespace SHIPENGINE_API
 
                             }
 
+                            //remove spaces
+                            //List Textboxes
                             IList<T> GetAllControls<T>(Control control) where T : Control
                             {
                                 var TextBoxes = new List<T>();
@@ -574,10 +581,10 @@ namespace SHIPENGINE_API
                                 return TextBoxes;
                             }
 
+                            //remove spaces loop
                             var textBoxesList = GetAllControls<System.Windows.Forms.TextBox>(this);
                             foreach (System.Windows.Forms.TextBox TextBoxes in textBoxesList)
                             {
-                                //"    Zero Cool"
                                 TextBoxes.Text = TextBoxes.Text.Replace("    ", "");
                             }
                         }
@@ -589,5 +596,18 @@ namespace SHIPENGINE_API
                 responseBodyrichTextbox.Text = (HTTPexception.Message);
             }
         }
+
+        private void shipDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+            DateTime shipDate = shipDateTimePicker.Value;
+
+
+            shipDateTextBox.Text = shipDate.ToString();
+
+
+
+        }
+
     }
 }

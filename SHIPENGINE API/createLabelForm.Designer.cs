@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(createLabelForm));
             this.createLabelTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.shipDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.warehouseIDlistBox = new System.Windows.Forms.ListBox();
             this.getRequestFormbutton = new System.Windows.Forms.Button();
@@ -139,6 +140,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
+            this.tabPage1.Controls.Add(this.shipDateTimePicker);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.getRequestFormbutton);
             this.tabPage1.Controls.Add(this.isReturnCheckBox);
@@ -169,6 +171,14 @@
             this.tabPage1.Size = new System.Drawing.Size(1417, 939);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ShipEngine Label";
+            // 
+            // shipDateTimePicker
+            // 
+            this.shipDateTimePicker.Location = new System.Drawing.Point(107, 94);
+            this.shipDateTimePicker.Name = "shipDateTimePicker";
+            this.shipDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.shipDateTimePicker.TabIndex = 68;
+            this.shipDateTimePicker.ValueChanged += new System.EventHandler(this.shipDateTimePicker_ValueChanged);
             // 
             // groupBox1
             // 
@@ -268,7 +278,7 @@
             // shipDateTextBox
             // 
             this.shipDateTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
-            this.shipDateTextBox.Location = new System.Drawing.Point(107, 94);
+            this.shipDateTextBox.Location = new System.Drawing.Point(313, 94);
             this.shipDateTextBox.Name = "shipDateTextBox";
             this.shipDateTextBox.Size = new System.Drawing.Size(206, 20);
             this.shipDateTextBox.TabIndex = 59;
@@ -1089,5 +1099,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.ListBox warehouseIDlistBox;
+        private System.Windows.Forms.DateTimePicker shipDateTimePicker;
     }
 }
