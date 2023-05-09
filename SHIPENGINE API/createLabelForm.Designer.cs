@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(createLabelForm));
             this.createLabelTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.warehouseIDlistBox = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.warehouseIDlistBox = new System.Windows.Forms.ListBox();
             this.getRequestFormbutton = new System.Windows.Forms.Button();
             this.isReturnCheckBox = new System.Windows.Forms.CheckBox();
             this.confirmationTextBox = new System.Windows.Forms.TextBox();
@@ -170,15 +170,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ShipEngine Label";
             // 
-            // warehouseIDlistBox
-            // 
-            this.warehouseIDlistBox.FormattingEnabled = true;
-            this.warehouseIDlistBox.Location = new System.Drawing.Point(6, 15);
-            this.warehouseIDlistBox.Name = "warehouseIDlistBox";
-            this.warehouseIDlistBox.Size = new System.Drawing.Size(289, 147);
-            this.warehouseIDlistBox.TabIndex = 1;
-            this.warehouseIDlistBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.warehouseIDlistBox);
@@ -188,6 +179,15 @@
             this.groupBox1.TabIndex = 62;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select Warehouse ID for ShipFrom";
+            // 
+            // warehouseIDlistBox
+            // 
+            this.warehouseIDlistBox.FormattingEnabled = true;
+            this.warehouseIDlistBox.Location = new System.Drawing.Point(6, 15);
+            this.warehouseIDlistBox.Name = "warehouseIDlistBox";
+            this.warehouseIDlistBox.Size = new System.Drawing.Size(289, 147);
+            this.warehouseIDlistBox.TabIndex = 1;
+            this.warehouseIDlistBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // getRequestFormbutton
             // 

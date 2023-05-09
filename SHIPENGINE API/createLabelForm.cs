@@ -415,6 +415,7 @@ namespace SHIPENGINE_API
                 responseObjectGet = (HttpWebResponse)requestObject.GetResponse();
                 string streamResponse = null;
 
+               
 
                 //Get Address
                 using (Stream stream = responseObjectGet.GetResponseStream())
@@ -432,8 +433,6 @@ namespace SHIPENGINE_API
                     {
                         for (string currentLine = reader.ReadLine(); currentLine != null; currentLine = reader.ReadLine())
                         {
-                                currentLine.Replace("null,", "");
-
 
                             //NAME
                             if (currentLine.Contains(" \"name\": \"") == true)
@@ -557,6 +556,29 @@ namespace SHIPENGINE_API
                                 //add to textbox
 
                                 shipFrmCountryTextBox.Text = Wh_CountryCode;
+                                //shipFrmCountryTextBox.Text = shipFrmCountryTextBox.Text.Replace("    ","");
+
+                            }
+
+                            IList<T> GetAllControls<T>(Control control) where T : Control
+                            {
+                                var lst = new List<T>();
+                                foreach (Control item in control.Controls)
+                                {
+                                    var ctr = item as T;
+                                    if (ctr != null)
+                                        lst.Add(ctr);
+                                    else
+                                        lst.AddRange(GetAllControls<T>(item));
+                                }
+                                return lst;
+                            }
+
+                            var textBoxes = GetAllControls<System.Windows.Forms.TextBox>(this);
+                            foreach (System.Windows.Forms.TextBox lst in textBoxes)
+                            {
+                                //"    Zero Cool"
+                                lst.Text = lst.Text.Replace("    ", "");
                             }
                         }
                     }
