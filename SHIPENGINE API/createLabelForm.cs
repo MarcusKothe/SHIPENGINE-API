@@ -68,6 +68,7 @@ namespace SHIPENGINE_API
 
                     using (var reader = new StringReader(streamResponse))
                     {
+
                         for (string currentLine = reader.ReadLine(); currentLine != null; currentLine = reader.ReadLine())
                         {
 
@@ -80,8 +81,7 @@ namespace SHIPENGINE_API
 
                                 //add to textbox
 
-                                listBox1.Text = WHID2 + "," + Environment.NewLine + listBox1.Text;
-
+                                warehouseIDlistBox.Text = WHID2 + "," + Environment.NewLine + warehouseIDlistBox.Text;
 
                             }
                             else
@@ -92,13 +92,13 @@ namespace SHIPENGINE_API
                         }
 
                         //Add Warehouse Id's to listbox
-                        string[] WarehouseIDlist = listBox1.Text.Split(',');
+                        string[] WarehouseIDlist = warehouseIDlistBox.Text.Split(',');
 
                         foreach (string WarehouseID in WarehouseIDlist)
                         {
                             if (WarehouseID.Trim() == "")
                                 continue;
-                            listBox1.Items.Add(WarehouseID.Trim());
+                            warehouseIDlistBox.Items.Add(WarehouseID.Trim());
                         }
                     }
                 }
@@ -387,6 +387,185 @@ namespace SHIPENGINE_API
             getRequestForm form2 = new getRequestForm();
             form2.ShowDialog();
 
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                //URL SOURCE
+                string URLstring = "https://api.shipengine.com/v1/warehouses/" + warehouseIDlistBox.Text;
+
+                //REQUEST
+                WebRequest requestObject = WebRequest.Create(URLstring);
+                requestObject.Method = "GET";
+
+                //SS AUTH
+                //string apiKey = ssAPIkeyTextBox.Text;
+                //string apiSecret = ssApiSecretTextBox.Text;
+                //requestObject.Credentials = new NetworkCredential(apiKey, apiSecret);
+
+                //SE AUTH
+                string engineApiKey = apiKeyTextBox.Text;
+                requestObject.Headers.Add("API-key", engineApiKey);
+
+                //RESPONSE
+                HttpWebResponse responseObjectGet = null;
+                responseObjectGet = (HttpWebResponse)requestObject.GetResponse();
+                string streamResponse = null;
+
+
+                //Get Address
+                using (Stream stream = responseObjectGet.GetResponseStream())
+                {
+                    StreamReader responseRead = new StreamReader(stream);
+                    streamResponse = responseRead.ReadToEnd();
+
+                    //
+                    int originAddress1 = streamResponse.IndexOf(" \"origin_address\": ") + " \"origin_address\": ".Length;
+                    int originAddress2 = streamResponse.LastIndexOf(" \"return_address\":");
+
+                    string originAddress = streamResponse.Substring(originAddress1, originAddress2 - originAddress1);
+
+                    using (var reader = new StringReader(originAddress))
+                    {
+                        for (string currentLine = reader.ReadLine(); currentLine != null; currentLine = reader.ReadLine())
+                        {
+                                currentLine.Replace("null,", "");
+
+
+                            //NAME
+                            if (currentLine.Contains(" \"name\": \"") == true)
+                            {
+
+                                //Replace "warehouse_id": " ",
+                                string Wh_Name1 = currentLine.Replace("\"name\": \"", "");
+                                string Wh_Name = Wh_Name1.Replace("\",", "");
+
+                                //add to textbox
+
+                                shipFrmNameTextBox.Text = Wh_Name;
+
+                            }
+
+                            //PHONE
+                            if(currentLine.Contains("\"phone\": \"") == true)
+                            {
+                                //Replace "warehouse_id": " ",
+                                string Wh_Phone1 = currentLine.Replace("\"phone\": \"", "");
+                                string Wh_Phone = Wh_Phone1.Replace("\",", "");
+
+                                //add to textbox
+
+                                shipFrmPhoneTextBox.Text = Wh_Phone;
+                            }
+
+                            //Company
+                            if (currentLine.Contains("\"company_name\": \"") == true)
+                            {
+                                //Replace "warehouse_id": " ",
+                                string Wh_CompanyName1 = currentLine.Replace("\"company_name\": \"", "");
+                                string Wh_CompanyName = Wh_CompanyName1.Replace("\",", "");
+
+                                //add to textbox
+
+                                shipFrmComTextBox.Text = Wh_CompanyName;
+                            }
+
+                            //AddressLine 1
+                            if (currentLine.Contains("\"address_line1\": \"") == true)
+                            {
+                                //Replace "warehouse_id": " ",
+                                string Wh_AddressL1 = currentLine.Replace("\"address_line1\": \"", "");
+                                string Wh_AddressL = Wh_AddressL1.Replace("\",", "");
+
+                                //add to textbox
+
+                                shipFrmad1TextBox.Text = Wh_AddressL;
+                            }
+
+                            //AddressLine 2
+                            if (currentLine.Contains("\"address_line2\": \"") == true)
+                            {
+                                //Replace "warehouse_id": " ",
+                                string Wh_AddressL2 = currentLine.Replace("\"address_line2\": \"", "");
+                                string Wh_AddressL3 = Wh_AddressL2.Replace("\",", "");
+
+                                //add to textbox
+
+                                shipFrmad2TextBox.Text = Wh_AddressL3;
+                            }
+
+                            //AddressLine 3
+                            if (currentLine.Contains("\"address_line3\": ") == true)
+                            {
+                                //Replace "warehouse_id": " ",
+                                string Wh_AddressL4 = currentLine.Replace("\"address_line3\": ", "");
+                                string Wh_AddressL5 = Wh_AddressL4.Replace("\",", "");
+
+                                //add to textbox
+
+                                shipFrmad3TextBox.Text = Wh_AddressL5;
+                            }
+
+                            //City
+                            if (currentLine.Contains("\"city_locality\": \"") == true)
+                            {
+                                //Replace "warehouse_id": " ",
+                                string Wh_City1 = currentLine.Replace("\"city_locality\": \"", "");
+                                string Wh_City = Wh_City1.Replace("\",", "");
+
+                                //add to textbox
+
+                                shipFrmCityTextBox.Text = Wh_City;
+                            }
+
+                            //State Province
+                            if (currentLine.Contains("\"state_province\": \"") == true)
+                            {
+                                //Replace "warehouse_id": " ",
+                                string Wh_StateProvince1 = currentLine.Replace("\"state_province\": \"", "");
+                                string Wh_StateProvince = Wh_StateProvince1.Replace("\",", "");
+
+                                //add to textbox
+
+                                shipFrmStProvTextBox.Text = Wh_StateProvince;
+                            }
+
+                            //Postal Code
+                            if (currentLine.Contains("\"postal_code\": \"") == true)
+                            {
+                                //Replace "warehouse_id": " ",
+                                string Wh_PostalCode1 = currentLine.Replace("\"postal_code\": \"", "");
+                                string Wh_PostalCode = Wh_PostalCode1.Replace("\",", "");
+
+                                //add to textbox
+
+                                shipFrmZipTextBox.Text = Wh_PostalCode;
+                            }
+
+                            //Country Code
+                            if (currentLine.Contains("\"country_code\": \"") == true)
+                            {
+                                //Replace "warehouse_id": " ",
+                                
+                                string Wh_CountryCode1 = currentLine.Replace("\"country_code\": \"", "");
+                                string Wh_CountryCode = Wh_CountryCode1.Replace("\",", "");
+                                
+
+                                //add to textbox
+
+                                shipFrmCountryTextBox.Text = Wh_CountryCode;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception HTTPexception)
+            {
+                responseBodyrichTextbox.Text = (HTTPexception.Message);
+            }
         }
     }
 }

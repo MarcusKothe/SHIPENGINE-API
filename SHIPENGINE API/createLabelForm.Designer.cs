@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(createLabelForm));
             this.createLabelTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.warehouseIDlistBox = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.getRequestFormbutton = new System.Windows.Forms.Button();
             this.isReturnCheckBox = new System.Windows.Forms.CheckBox();
@@ -170,17 +170,18 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ShipEngine Label";
             // 
-            // listBox1
+            // warehouseIDlistBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 15);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(289, 147);
-            this.listBox1.TabIndex = 1;
+            this.warehouseIDlistBox.FormattingEnabled = true;
+            this.warehouseIDlistBox.Location = new System.Drawing.Point(6, 15);
+            this.warehouseIDlistBox.Name = "warehouseIDlistBox";
+            this.warehouseIDlistBox.Size = new System.Drawing.Size(289, 147);
+            this.warehouseIDlistBox.TabIndex = 1;
+            this.warehouseIDlistBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.warehouseIDlistBox);
             this.groupBox1.Location = new System.Drawing.Point(325, 430);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(308, 174);
@@ -1087,6 +1088,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox warehouseIDlistBox;
     }
 }
