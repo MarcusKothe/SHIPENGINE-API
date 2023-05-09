@@ -117,6 +117,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.createLabelTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.packageGroupbox.SuspendLayout();
             this.shipFromgroupBox.SuspendLayout();
             this.shipTogroupBox.SuspendLayout();
@@ -138,7 +139,6 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
-            this.tabPage1.Controls.Add(this.listBox1);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.getRequestFormbutton);
             this.tabPage1.Controls.Add(this.isReturnCheckBox);
@@ -173,19 +173,20 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(662, 632);
+            this.listBox1.Location = new System.Drawing.Point(6, 15);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(251, 238);
+            this.listBox1.Size = new System.Drawing.Size(289, 147);
             this.listBox1.TabIndex = 1;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Location = new System.Drawing.Point(325, 430);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(308, 174);
             this.groupBox1.TabIndex = 62;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "???";
+            this.groupBox1.Text = "Select Warehouse ID for ShipFrom";
             // 
             // getRequestFormbutton
             // 
@@ -937,7 +938,7 @@
             // createLabelbutton
             // 
             this.createLabelbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createLabelbutton.Location = new System.Drawing.Point(133, 610);
+            this.createLabelbutton.Location = new System.Drawing.Point(131, 610);
             this.createLabelbutton.Name = "createLabelbutton";
             this.createLabelbutton.Size = new System.Drawing.Size(382, 72);
             this.createLabelbutton.TabIndex = 0;
@@ -987,6 +988,7 @@
             this.createLabelTabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.packageGroupbox.ResumeLayout(false);
             this.packageGroupbox.PerformLayout();
             this.shipFromgroupBox.ResumeLayout(false);

@@ -13,6 +13,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -29,6 +30,84 @@ namespace SHIPENGINE_API
         private void createLabelForm_Load(object sender, EventArgs e)
         {
           
+        }
+
+
+        private void apiKeyTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                //URL SOURCE
+                string URLstring = "https://api.shipengine.com/v1/warehouses";
+
+                //REQUEST
+                WebRequest requestObject = WebRequest.Create(URLstring);
+                requestObject.Method = "GET";
+
+                //SS AUTH
+                //string apiKey = ssAPIkeyTextBox.Text;
+                //string apiSecret = ssApiSecretTextBox.Text;
+                //requestObject.Credentials = new NetworkCredential(apiKey, apiSecret);
+
+                //SE AUTH
+                string engineApiKey = apiKeyTextBox.Text;
+                requestObject.Headers.Add("API-key", engineApiKey);
+
+                //RESPONSE
+                HttpWebResponse responseObjectGet = null;
+                responseObjectGet = (HttpWebResponse)requestObject.GetResponse();
+                string streamResponse = null;
+
+
+                //Get all warehouseId's
+                using (Stream stream = responseObjectGet.GetResponseStream())
+                {
+                    StreamReader responseRead = new StreamReader(stream);
+                    streamResponse = responseRead.ReadToEnd();
+
+                    using (var reader = new StringReader(streamResponse))
+                    {
+                        for (string currentLine = reader.ReadLine(); currentLine != null; currentLine = reader.ReadLine())
+                        {
+
+                            if (currentLine.Contains("warehouse_id") == true)
+                            {
+
+                                //Replace "warehouse_id": " ",
+                                string WHID = currentLine.Replace(" \"warehouse_id\": \"", "");
+                                string WHID2 = WHID.Replace("\",", "");
+
+                                //add to textbox
+
+                                listBox1.Text = WHID2 + "," + Environment.NewLine + listBox1.Text;
+
+
+                            }
+                            else
+                            {
+                                //remove all lines that dont contain WarehouseId
+                                currentLine.Replace(currentLine, "");
+                            }
+                        }
+
+                        //Add Warehouse Id's to listbox
+                        string[] WarehouseIDlist = listBox1.Text.Split(',');
+
+                        foreach (string WarehouseID in WarehouseIDlist)
+                        {
+                            if (WarehouseID.Trim() == "")
+                                continue;
+                            listBox1.Items.Add(WarehouseID.Trim());
+                        }
+                    }
+                }
+            }
+            catch (Exception HTTPexception)
+            {
+                responseBodyrichTextbox.Text = (HTTPexception.Message);
+            }
+
         }
 
         private void createLabelbutton_Click(object sender, EventArgs e)
@@ -307,76 +386,6 @@ namespace SHIPENGINE_API
         {
             getRequestForm form2 = new getRequestForm();
             form2.ShowDialog();
-
-        }
-
-        private void apiKeyTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-            int warehousenumber = 0;
-
-            try
-            {
-                //URL SOURCE
-                string URLstring = "https://api.shipengine.com/v1/warehouses";
-
-                //REQUEST
-                WebRequest requestObject = WebRequest.Create(URLstring);
-                requestObject.Method = "GET";
-
-                //SS AUTH
-                //string apiKey = ssAPIkeyTextBox.Text;
-                //string apiSecret = ssApiSecretTextBox.Text;
-                //requestObject.Credentials = new NetworkCredential(apiKey, apiSecret);
-
-                //SE AUTH
-                string engineApiKey = apiKeyTextBox.Text;
-                requestObject.Headers.Add("API-key", engineApiKey);
-
-                //RESPONSE
-                HttpWebResponse responseObjectGet = null;
-                responseObjectGet = (HttpWebResponse)requestObject.GetResponse();
-
-                //DATA
-                string streamResponse = null;
-                using (Stream stream = responseObjectGet.GetResponseStream())
-                {
-                    StreamReader responseRead = new StreamReader(stream);
-                    streamResponse = responseRead.ReadToEnd();
-
-
-                    //Get all warehouseId's
-                    using (var reader = new StringReader(streamResponse))
-                    {
-                        for(string currentLine = reader.ReadLine(); currentLine != null; currentLine = reader.ReadLine())
-                        {
-
-                            if(currentLine.Contains("warehouse_id") == true)
-                            {
-                                //Replace "warehouse_id": " ",
-                                string WHID = currentLine.Replace(" \"warehouse_id\": \"", "");
-                                string WHID2 = WHID.Replace("\",", "");
-
-                                //add to textbox
-                                responseBodyrichTextbox.Text = WHID2 + "," + responseBodyrichTextbox.Text;
-
-                            }
-                            else
-                            {
-                                currentLine.Replace(currentLine, "");
-                            }
-
-                        }
-                    }
-
-                }
-            }
-            catch (Exception HTTPexception)
-            {
-                responseBodyrichTextbox.Text = (HTTPexception.Message);
-            }
-
-
 
         }
     }
