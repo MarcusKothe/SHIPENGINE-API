@@ -31,6 +31,29 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(createLabelForm));
             this.createLabelTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.advancedOptionsgroupBox = new System.Windows.Forms.GroupBox();
+            this.CustomField1TextBox = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.nonMachinableTextBox = new System.Windows.Forms.TextBox();
+            this.saturdayDeliveryTextBox = new System.Windows.Forms.TextBox();
+            this.containsAlcoholTextBox = new System.Windows.Forms.TextBox();
+            this.deliveryDutyPaidTextBox = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.billToPostalcodeTextBox = new System.Windows.Forms.TextBox();
+            this.billtoCountrycodeTextBox = new System.Windows.Forms.TextBox();
+            this.billToPartyTextBox = new System.Windows.Forms.TextBox();
+            this.billToAccountTextbox = new System.Windows.Forms.TextBox();
             this.shipDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.warehouseIDlistBox = new System.Windows.Forms.ListBox();
@@ -118,6 +141,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.createLabelTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.advancedOptionsgroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.packageGroupbox.SuspendLayout();
             this.shipFromgroupBox.SuspendLayout();
@@ -131,15 +155,16 @@
             this.createLabelTabControl.Controls.Add(this.tabPage2);
             this.createLabelTabControl.Controls.Add(this.tabPage4);
             this.createLabelTabControl.Controls.Add(this.tabPage3);
-            this.createLabelTabControl.Location = new System.Drawing.Point(0, 0);
+            this.createLabelTabControl.Location = new System.Drawing.Point(-2, 0);
             this.createLabelTabControl.Name = "createLabelTabControl";
             this.createLabelTabControl.SelectedIndex = 0;
-            this.createLabelTabControl.Size = new System.Drawing.Size(1425, 965);
+            this.createLabelTabControl.Size = new System.Drawing.Size(1435, 968);
             this.createLabelTabControl.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
+            this.tabPage1.Controls.Add(this.advancedOptionsgroupBox);
             this.tabPage1.Controls.Add(this.shipDateTimePicker);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.getRequestFormbutton);
@@ -168,15 +193,222 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1417, 939);
+            this.tabPage1.Size = new System.Drawing.Size(1427, 942);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ShipEngine Label";
+            // 
+            // advancedOptionsgroupBox
+            // 
+            this.advancedOptionsgroupBox.Controls.Add(this.CustomField1TextBox);
+            this.advancedOptionsgroupBox.Controls.Add(this.textBox2);
+            this.advancedOptionsgroupBox.Controls.Add(this.textBox1);
+            this.advancedOptionsgroupBox.Controls.Add(this.label48);
+            this.advancedOptionsgroupBox.Controls.Add(this.label47);
+            this.advancedOptionsgroupBox.Controls.Add(this.label46);
+            this.advancedOptionsgroupBox.Controls.Add(this.label45);
+            this.advancedOptionsgroupBox.Controls.Add(this.label44);
+            this.advancedOptionsgroupBox.Controls.Add(this.nonMachinableTextBox);
+            this.advancedOptionsgroupBox.Controls.Add(this.saturdayDeliveryTextBox);
+            this.advancedOptionsgroupBox.Controls.Add(this.containsAlcoholTextBox);
+            this.advancedOptionsgroupBox.Controls.Add(this.deliveryDutyPaidTextBox);
+            this.advancedOptionsgroupBox.Controls.Add(this.label43);
+            this.advancedOptionsgroupBox.Controls.Add(this.label42);
+            this.advancedOptionsgroupBox.Controls.Add(this.label41);
+            this.advancedOptionsgroupBox.Controls.Add(this.label40);
+            this.advancedOptionsgroupBox.Controls.Add(this.label39);
+            this.advancedOptionsgroupBox.Controls.Add(this.label38);
+            this.advancedOptionsgroupBox.Controls.Add(this.billToPostalcodeTextBox);
+            this.advancedOptionsgroupBox.Controls.Add(this.billtoCountrycodeTextBox);
+            this.advancedOptionsgroupBox.Controls.Add(this.billToPartyTextBox);
+            this.advancedOptionsgroupBox.Controls.Add(this.billToAccountTextbox);
+            this.advancedOptionsgroupBox.Location = new System.Drawing.Point(11, 610);
+            this.advancedOptionsgroupBox.Name = "advancedOptionsgroupBox";
+            this.advancedOptionsgroupBox.Size = new System.Drawing.Size(622, 323);
+            this.advancedOptionsgroupBox.TabIndex = 57;
+            this.advancedOptionsgroupBox.TabStop = false;
+            this.advancedOptionsgroupBox.Text = "Advanced Shipment Options";
+            // 
+            // CustomField1TextBox
+            // 
+            this.CustomField1TextBox.Location = new System.Drawing.Point(120, 221);
+            this.CustomField1TextBox.Name = "CustomField1TextBox";
+            this.CustomField1TextBox.Size = new System.Drawing.Size(100, 20);
+            this.CustomField1TextBox.TabIndex = 89;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(120, 247);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 88;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(120, 273);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 87;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(17, 276);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(76, 13);
+            this.label48.TabIndex = 86;
+            this.label48.Text = "Custom Field 3";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(17, 224);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(76, 13);
+            this.label47.TabIndex = 85;
+            this.label47.Text = "Custom Field 1";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(17, 250);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(76, 13);
+            this.label46.TabIndex = 84;
+            this.label46.Text = "Custom Field 2";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(17, 172);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(85, 13);
+            this.label45.TabIndex = 83;
+            this.label45.Text = "Non Machinable";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(17, 198);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(90, 13);
+            this.label44.TabIndex = 82;
+            this.label44.Text = "Saturday Delivery";
+            // 
+            // nonMachinableTextBox
+            // 
+            this.nonMachinableTextBox.Location = new System.Drawing.Point(120, 169);
+            this.nonMachinableTextBox.Name = "nonMachinableTextBox";
+            this.nonMachinableTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nonMachinableTextBox.TabIndex = 81;
+            // 
+            // saturdayDeliveryTextBox
+            // 
+            this.saturdayDeliveryTextBox.Location = new System.Drawing.Point(120, 195);
+            this.saturdayDeliveryTextBox.Name = "saturdayDeliveryTextBox";
+            this.saturdayDeliveryTextBox.Size = new System.Drawing.Size(100, 20);
+            this.saturdayDeliveryTextBox.TabIndex = 80;
+            // 
+            // containsAlcoholTextBox
+            // 
+            this.containsAlcoholTextBox.Location = new System.Drawing.Point(120, 117);
+            this.containsAlcoholTextBox.Name = "containsAlcoholTextBox";
+            this.containsAlcoholTextBox.Size = new System.Drawing.Size(100, 20);
+            this.containsAlcoholTextBox.TabIndex = 79;
+            // 
+            // deliveryDutyPaidTextBox
+            // 
+            this.deliveryDutyPaidTextBox.Location = new System.Drawing.Point(120, 143);
+            this.deliveryDutyPaidTextBox.Name = "deliveryDutyPaidTextBox";
+            this.deliveryDutyPaidTextBox.Size = new System.Drawing.Size(100, 20);
+            this.deliveryDutyPaidTextBox.TabIndex = 78;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(17, 146);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(89, 13);
+            this.label43.TabIndex = 77;
+            this.label43.Text = "Deliver Duty Paid";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(17, 120);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(86, 13);
+            this.label42.TabIndex = 76;
+            this.label42.Text = "Contains Alcohol";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(17, 42);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(103, 13);
+            this.label41.TabIndex = 75;
+            this.label41.Text = "Bill To Country Code";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(17, 68);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(63, 13);
+            this.label40.TabIndex = 74;
+            this.label40.Text = "Bill To Party";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(17, 94);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(96, 13);
+            this.label39.TabIndex = 73;
+            this.label39.Text = "Bill To Postal Code";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(17, 16);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(79, 13);
+            this.label38.TabIndex = 62;
+            this.label38.Text = "Bill To Account";
+            // 
+            // billToPostalcodeTextBox
+            // 
+            this.billToPostalcodeTextBox.Location = new System.Drawing.Point(120, 91);
+            this.billToPostalcodeTextBox.Name = "billToPostalcodeTextBox";
+            this.billToPostalcodeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.billToPostalcodeTextBox.TabIndex = 69;
+            // 
+            // billtoCountrycodeTextBox
+            // 
+            this.billtoCountrycodeTextBox.Location = new System.Drawing.Point(120, 39);
+            this.billtoCountrycodeTextBox.Name = "billtoCountrycodeTextBox";
+            this.billtoCountrycodeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.billtoCountrycodeTextBox.TabIndex = 71;
+            // 
+            // billToPartyTextBox
+            // 
+            this.billToPartyTextBox.Location = new System.Drawing.Point(120, 65);
+            this.billToPartyTextBox.Name = "billToPartyTextBox";
+            this.billToPartyTextBox.Size = new System.Drawing.Size(100, 20);
+            this.billToPartyTextBox.TabIndex = 72;
+            // 
+            // billToAccountTextbox
+            // 
+            this.billToAccountTextbox.Location = new System.Drawing.Point(120, 13);
+            this.billToAccountTextbox.Name = "billToAccountTextbox";
+            this.billToAccountTextbox.Size = new System.Drawing.Size(100, 20);
+            this.billToAccountTextbox.TabIndex = 70;
             // 
             // shipDateTimePicker
             // 
             this.shipDateTimePicker.Location = new System.Drawing.Point(107, 94);
             this.shipDateTimePicker.Name = "shipDateTimePicker";
-            this.shipDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.shipDateTimePicker.Size = new System.Drawing.Size(206, 20);
             this.shipDateTimePicker.TabIndex = 68;
             this.shipDateTimePicker.ValueChanged += new System.EventHandler(this.shipDateTimePicker_ValueChanged);
             // 
@@ -193,9 +425,9 @@
             // warehouseIDlistBox
             // 
             this.warehouseIDlistBox.FormattingEnabled = true;
-            this.warehouseIDlistBox.Location = new System.Drawing.Point(6, 15);
+            this.warehouseIDlistBox.Location = new System.Drawing.Point(1, 15);
             this.warehouseIDlistBox.Name = "warehouseIDlistBox";
-            this.warehouseIDlistBox.Size = new System.Drawing.Size(289, 147);
+            this.warehouseIDlistBox.Size = new System.Drawing.Size(296, 147);
             this.warehouseIDlistBox.TabIndex = 1;
             this.warehouseIDlistBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -250,7 +482,7 @@
             // warehouseIdTextBox
             // 
             this.warehouseIdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
-            this.warehouseIdTextBox.Location = new System.Drawing.Point(416, 7);
+            this.warehouseIdTextBox.Location = new System.Drawing.Point(416, 9);
             this.warehouseIdTextBox.Name = "warehouseIdTextBox";
             this.warehouseIdTextBox.Size = new System.Drawing.Size(206, 20);
             this.warehouseIdTextBox.TabIndex = 62;
@@ -259,7 +491,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(322, 14);
+            this.label31.Location = new System.Drawing.Point(317, 12);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(88, 13);
             this.label31.TabIndex = 61;
@@ -278,7 +510,7 @@
             // shipDateTextBox
             // 
             this.shipDateTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
-            this.shipDateTextBox.Location = new System.Drawing.Point(313, 94);
+            this.shipDateTextBox.Location = new System.Drawing.Point(325, 93);
             this.shipDateTextBox.Name = "shipDateTextBox";
             this.shipDateTextBox.Size = new System.Drawing.Size(206, 20);
             this.shipDateTextBox.TabIndex = 59;
@@ -344,7 +576,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(15, 123);
+            this.label24.Location = new System.Drawing.Point(17, 122);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(40, 13);
             this.label24.TabIndex = 57;
@@ -362,7 +594,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(15, 100);
+            this.label25.Location = new System.Drawing.Point(17, 96);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(35, 13);
             this.label25.TabIndex = 58;
@@ -371,7 +603,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(15, 74);
+            this.label26.Location = new System.Drawing.Point(17, 70);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(38, 13);
             this.label26.TabIndex = 59;
@@ -380,7 +612,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(15, 48);
+            this.label27.Location = new System.Drawing.Point(17, 44);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(63, 13);
             this.label27.TabIndex = 60;
@@ -410,6 +642,7 @@
             this.packageDimensionsUnitTextBox.Name = "packageDimensionsUnitTextBox";
             this.packageDimensionsUnitTextBox.Size = new System.Drawing.Size(195, 20);
             this.packageDimensionsUnitTextBox.TabIndex = 30;
+            this.packageDimensionsUnitTextBox.Text = "inch";
             // 
             // packageLengthTextBox
             // 
@@ -434,6 +667,7 @@
             this.packageweightUnitTextBox.Name = "packageweightUnitTextBox";
             this.packageweightUnitTextBox.Size = new System.Drawing.Size(195, 20);
             this.packageweightUnitTextBox.TabIndex = 34;
+            this.packageweightUnitTextBox.Text = "pound";
             // 
             // packageHeightTextBox
             // 
@@ -932,7 +1166,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1130, 8);
+            this.label1.Location = new System.Drawing.Point(1150, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 17);
             this.label1.TabIndex = 4;
@@ -949,7 +1183,7 @@
             // createLabelbutton
             // 
             this.createLabelbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createLabelbutton.Location = new System.Drawing.Point(131, 610);
+            this.createLabelbutton.Location = new System.Drawing.Point(639, 610);
             this.createLabelbutton.Name = "createLabelbutton";
             this.createLabelbutton.Size = new System.Drawing.Size(382, 72);
             this.createLabelbutton.TabIndex = 0;
@@ -961,7 +1195,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1417, 939);
+            this.tabPage2.Size = new System.Drawing.Size(1427, 942);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ShipStation Label";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -971,7 +1205,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1417, 939);
+            this.tabPage4.Size = new System.Drawing.Size(1427, 942);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Get Request";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -981,7 +1215,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1417, 939);
+            this.tabPage3.Size = new System.Drawing.Size(1427, 942);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Rating";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -999,6 +1233,8 @@
             this.createLabelTabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.advancedOptionsgroupBox.ResumeLayout(false);
+            this.advancedOptionsgroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.packageGroupbox.ResumeLayout(false);
             this.packageGroupbox.PerformLayout();
@@ -1100,5 +1336,28 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.ListBox warehouseIDlistBox;
         private System.Windows.Forms.DateTimePicker shipDateTimePicker;
+        private System.Windows.Forms.GroupBox advancedOptionsgroupBox;
+        private System.Windows.Forms.TextBox billToPartyTextBox;
+        private System.Windows.Forms.TextBox billtoCountrycodeTextBox;
+        private System.Windows.Forms.TextBox billToAccountTextbox;
+        private System.Windows.Forms.TextBox billToPostalcodeTextBox;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox containsAlcoholTextBox;
+        private System.Windows.Forms.TextBox deliveryDutyPaidTextBox;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox nonMachinableTextBox;
+        private System.Windows.Forms.TextBox saturdayDeliveryTextBox;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox CustomField1TextBox;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

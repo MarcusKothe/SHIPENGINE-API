@@ -37,7 +37,6 @@ namespace SHIPENGINE_API
 
         }
 
-
         private void apiKeyTextBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -200,12 +199,12 @@ namespace SHIPENGINE_API
                 //Advanced Options Region
                 #region Advanced Options
 
-                string bill_to_account = null; //This field is used to bill shipping costs to a third party. This field must be used in conjunction with the bill_to_country_code, bill_to_party, and bill_to_postal_code fields.
-                string bill_to_country_code = null; //The two-letter ISO 3166-1 country code of the third-party that is responsible for shipping costs.
-                string bill_to_party = null; //Indicates whether to bill shipping costs to the recipient or to a third-party. When billing to a third-party, the bill_to_account, bill_to_country_code, and bill_to_postal_code fields must also be set.
-                string bill_to_postal_code = null; //The postal code of the third-party that is responsible for shipping costs.
-                bool contains_alcohol = false; //Indicates that the shipment contains alcohol.
-                bool delivered_duty_paid = false; //Indicates that the shipper is paying the international delivery duties for this shipment. This option is supported by UPS, FedEx, and DHL Express.
+                string bill_to_account = billToAccountTextbox.Text; //This field is used to bill shipping costs to a third party. This field must be used in conjunction with the bill_to_country_code, bill_to_party, and bill_to_postal_code fields.
+                string bill_to_country_code = billtoCountrycodeTextBox.Text; //The two-letter ISO 3166-1 country code of the third-party that is responsible for shipping costs.
+                string bill_to_party = billToPartyTextBox.Text; //Indicates whether to bill shipping costs to the recipient or to a third-party. When billing to a third-party, the bill_to_account, bill_to_country_code, and bill_to_postal_code fields must also be set.
+                string bill_to_postal_code = billToPostalcodeTextBox.Text; //The postal code of the third-party that is responsible for shipping costs.
+                bool contains_alcohol = bool.Parse(containsAlcoholTextBox.Text); //Indicates that the shipment contains alcohol.
+                bool delivered_duty_paid = bool.Parse(deliveryDutyPaidTextBox.Text); //Indicates that the shipper is paying the international delivery duties for this shipment. This option is supported by UPS, FedEx, and DHL Express.
 
                 //DRY ICE OBJECT
                 bool dry_ice = false; //Indicates if the shipment contain dry ice
@@ -213,8 +212,8 @@ namespace SHIPENGINE_API
                 double dry_ice_weight_value = 0;
                 string dry_ice_weight_unit;
 
-                bool non_machinable = false; //Indicates that the package cannot be processed automatically because it is too large or irregularly shaped. This is primarily for USPS shipments. See Section 1.2 of the USPS parcel standards for details.
-                bool saturday_delivery = false; //Enables Saturday delivery, if supported by the carrier.
+                bool non_machinable = bool.Parse(nonMachinableTextBox.Text); //Indicates that the package cannot be processed automatically because it is too large or irregularly shaped. This is primarily for USPS shipments. See Section 1.2 of the USPS parcel standards for details.
+                bool saturday_delivery = bool.Parse(saturdayDeliveryTextBox.Text); //Enables Saturday delivery, if supported by the carrier.
 
                 //FEDEX FREIGHT OBJECT Provide details for the Fedex freight service
                 string shipper_load_and_count = null;
@@ -601,13 +600,8 @@ namespace SHIPENGINE_API
         {
 
             DateTime shipDate = shipDateTimePicker.Value;
-
-
             shipDateTextBox.Text = shipDate.ToString();
 
-
-
         }
-
     }
 }
