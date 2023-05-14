@@ -54,7 +54,7 @@
             this.billtoCountrycodeTextBox = new System.Windows.Forms.TextBox();
             this.billToPartyTextBox = new System.Windows.Forms.TextBox();
             this.billToAccountTextbox = new System.Windows.Forms.TextBox();
-            this.shipDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.ship_date_TimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.warehouseIDlistBox = new System.Windows.Forms.ListBox();
             this.getRequestFormbutton = new System.Windows.Forms.Button();
@@ -65,9 +65,9 @@
             this.warehouseIdTextBox = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.shipDateTextBox = new System.Windows.Forms.TextBox();
+            this.ship_date_TextBox = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.carrierCodeTextbox = new System.Windows.Forms.TextBox();
+            this.carrier_id_TextBox = new System.Windows.Forms.TextBox();
             this.apiKeyTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.packageGroupbox = new System.Windows.Forms.GroupBox();
@@ -115,7 +115,7 @@
             this.label34 = new System.Windows.Forms.Label();
             this.residentialCheckbox = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.shipToNameTextBox = new System.Windows.Forms.TextBox();
+            this.ship_To_Name_TextBox = new System.Windows.Forms.TextBox();
             this.shipToadd1TextBox = new System.Windows.Forms.TextBox();
             this.shipToCityTextBox = new System.Windows.Forms.TextBox();
             this.shipToadd2TextBox = new System.Windows.Forms.TextBox();
@@ -130,7 +130,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.serviceCodeTextBox = new System.Windows.Forms.TextBox();
+            this.service_code_TextBox = new System.Windows.Forms.TextBox();
             this.labelImageBox = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -139,6 +139,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.rateTestTextBox = new System.Windows.Forms.RichTextBox();
+            this.getRatesButton = new System.Windows.Forms.Button();
             this.createLabelTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.advancedOptionsgroupBox.SuspendLayout();
@@ -147,6 +149,7 @@
             this.shipFromgroupBox.SuspendLayout();
             this.shipTogroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.labelImageBox)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // createLabelTabControl
@@ -164,8 +167,9 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
+            this.tabPage1.Controls.Add(this.getRatesButton);
             this.tabPage1.Controls.Add(this.advancedOptionsgroupBox);
-            this.tabPage1.Controls.Add(this.shipDateTimePicker);
+            this.tabPage1.Controls.Add(this.ship_date_TimePicker);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.getRequestFormbutton);
             this.tabPage1.Controls.Add(this.isReturnCheckBox);
@@ -175,16 +179,16 @@
             this.tabPage1.Controls.Add(this.warehouseIdTextBox);
             this.tabPage1.Controls.Add(this.label31);
             this.tabPage1.Controls.Add(this.label30);
-            this.tabPage1.Controls.Add(this.shipDateTextBox);
+            this.tabPage1.Controls.Add(this.ship_date_TextBox);
             this.tabPage1.Controls.Add(this.label29);
-            this.tabPage1.Controls.Add(this.carrierCodeTextbox);
+            this.tabPage1.Controls.Add(this.carrier_id_TextBox);
             this.tabPage1.Controls.Add(this.apiKeyTextBox);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.packageGroupbox);
             this.tabPage1.Controls.Add(this.shipFromgroupBox);
             this.tabPage1.Controls.Add(this.shipTogroupBox);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.serviceCodeTextBox);
+            this.tabPage1.Controls.Add(this.service_code_TextBox);
             this.tabPage1.Controls.Add(this.labelImageBox);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
@@ -404,13 +408,13 @@
             this.billToAccountTextbox.Size = new System.Drawing.Size(100, 20);
             this.billToAccountTextbox.TabIndex = 70;
             // 
-            // shipDateTimePicker
+            // ship_date_TimePicker
             // 
-            this.shipDateTimePicker.Location = new System.Drawing.Point(107, 94);
-            this.shipDateTimePicker.Name = "shipDateTimePicker";
-            this.shipDateTimePicker.Size = new System.Drawing.Size(206, 20);
-            this.shipDateTimePicker.TabIndex = 68;
-            this.shipDateTimePicker.ValueChanged += new System.EventHandler(this.shipDateTimePicker_ValueChanged);
+            this.ship_date_TimePicker.Location = new System.Drawing.Point(107, 94);
+            this.ship_date_TimePicker.Name = "ship_date_TimePicker";
+            this.ship_date_TimePicker.Size = new System.Drawing.Size(206, 20);
+            this.ship_date_TimePicker.TabIndex = 68;
+            this.ship_date_TimePicker.ValueChanged += new System.EventHandler(this.shipDateTimePicker_ValueChanged);
             // 
             // groupBox1
             // 
@@ -507,13 +511,13 @@
             this.label30.TabIndex = 60;
             this.label30.Text = "Ship Date";
             // 
-            // shipDateTextBox
+            // ship_date_TextBox
             // 
-            this.shipDateTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
-            this.shipDateTextBox.Location = new System.Drawing.Point(325, 93);
-            this.shipDateTextBox.Name = "shipDateTextBox";
-            this.shipDateTextBox.Size = new System.Drawing.Size(206, 20);
-            this.shipDateTextBox.TabIndex = 59;
+            this.ship_date_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
+            this.ship_date_TextBox.Location = new System.Drawing.Point(325, 93);
+            this.ship_date_TextBox.Name = "ship_date_TextBox";
+            this.ship_date_TextBox.Size = new System.Drawing.Size(206, 20);
+            this.ship_date_TextBox.TabIndex = 59;
             // 
             // label29
             // 
@@ -525,13 +529,13 @@
             this.label29.TabIndex = 58;
             this.label29.Text = "Carrier code";
             // 
-            // carrierCodeTextbox
+            // carrier_id_TextBox
             // 
-            this.carrierCodeTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
-            this.carrierCodeTextbox.Location = new System.Drawing.Point(107, 68);
-            this.carrierCodeTextbox.Name = "carrierCodeTextbox";
-            this.carrierCodeTextbox.Size = new System.Drawing.Size(206, 20);
-            this.carrierCodeTextbox.TabIndex = 57;
+            this.carrier_id_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
+            this.carrier_id_TextBox.Location = new System.Drawing.Point(107, 68);
+            this.carrier_id_TextBox.Name = "carrier_id_TextBox";
+            this.carrier_id_TextBox.Size = new System.Drawing.Size(206, 20);
+            this.carrier_id_TextBox.TabIndex = 57;
             // 
             // apiKeyTextBox
             // 
@@ -910,7 +914,7 @@
             this.shipTogroupBox.Controls.Add(this.label34);
             this.shipTogroupBox.Controls.Add(this.residentialCheckbox);
             this.shipTogroupBox.Controls.Add(this.label6);
-            this.shipTogroupBox.Controls.Add(this.shipToNameTextBox);
+            this.shipTogroupBox.Controls.Add(this.ship_To_Name_TextBox);
             this.shipTogroupBox.Controls.Add(this.shipToadd1TextBox);
             this.shipTogroupBox.Controls.Add(this.shipToCityTextBox);
             this.shipTogroupBox.Controls.Add(this.shipToadd2TextBox);
@@ -1003,13 +1007,13 @@
             this.label6.TabIndex = 36;
             this.label6.Text = "Name";
             // 
-            // shipToNameTextBox
+            // ship_To_Name_TextBox
             // 
-            this.shipToNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
-            this.shipToNameTextBox.Location = new System.Drawing.Point(102, 24);
-            this.shipToNameTextBox.Name = "shipToNameTextBox";
-            this.shipToNameTextBox.Size = new System.Drawing.Size(195, 20);
-            this.shipToNameTextBox.TabIndex = 8;
+            this.ship_To_Name_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
+            this.ship_To_Name_TextBox.Location = new System.Drawing.Point(102, 24);
+            this.ship_To_Name_TextBox.Name = "ship_To_Name_TextBox";
+            this.ship_To_Name_TextBox.Size = new System.Drawing.Size(195, 20);
+            this.ship_To_Name_TextBox.TabIndex = 8;
             // 
             // shipToadd1TextBox
             // 
@@ -1134,13 +1138,13 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "Service code";
             // 
-            // serviceCodeTextBox
+            // service_code_TextBox
             // 
-            this.serviceCodeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
-            this.serviceCodeTextBox.Location = new System.Drawing.Point(107, 42);
-            this.serviceCodeTextBox.Name = "serviceCodeTextBox";
-            this.serviceCodeTextBox.Size = new System.Drawing.Size(206, 20);
-            this.serviceCodeTextBox.TabIndex = 7;
+            this.service_code_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(164)))));
+            this.service_code_TextBox.Location = new System.Drawing.Point(107, 42);
+            this.service_code_TextBox.Name = "service_code_TextBox";
+            this.service_code_TextBox.Size = new System.Drawing.Size(206, 20);
+            this.service_code_TextBox.TabIndex = 7;
             // 
             // labelImageBox
             // 
@@ -1212,6 +1216,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.rateTestTextBox);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -1219,6 +1224,24 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Rating";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // rateTestTextBox
+            // 
+            this.rateTestTextBox.Location = new System.Drawing.Point(555, 6);
+            this.rateTestTextBox.Name = "rateTestTextBox";
+            this.rateTestTextBox.Size = new System.Drawing.Size(597, 602);
+            this.rateTestTextBox.TabIndex = 0;
+            this.rateTestTextBox.Text = "";
+            // 
+            // getRatesButton
+            // 
+            this.getRatesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.getRatesButton.Location = new System.Drawing.Point(639, 688);
+            this.getRatesButton.Name = "getRatesButton";
+            this.getRatesButton.Size = new System.Drawing.Size(382, 72);
+            this.getRatesButton.TabIndex = 69;
+            this.getRatesButton.Text = "GET RATES";
+            this.getRatesButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // createLabelForm
             // 
@@ -1243,6 +1266,7 @@
             this.shipTogroupBox.ResumeLayout(false);
             this.shipTogroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.labelImageBox)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1279,8 +1303,8 @@
         private System.Windows.Forms.TextBox shipToadd2TextBox;
         private System.Windows.Forms.TextBox shipToCityTextBox;
         private System.Windows.Forms.TextBox shipToadd1TextBox;
-        private System.Windows.Forms.TextBox shipToNameTextBox;
-        private System.Windows.Forms.TextBox serviceCodeTextBox;
+        private System.Windows.Forms.TextBox ship_To_Name_TextBox;
+        private System.Windows.Forms.TextBox service_code_TextBox;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
@@ -1313,9 +1337,9 @@
         private System.Windows.Forms.CheckBox residentialCheckbox;
         private System.Windows.Forms.CheckBox shipFromresidentialCheckbox;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox shipDateTextBox;
+        private System.Windows.Forms.TextBox ship_date_TextBox;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox carrierCodeTextbox;
+        private System.Windows.Forms.TextBox carrier_id_TextBox;
         private System.Windows.Forms.TextBox warehouseIdTextBox;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.CheckBox isReturnCheckBox;
@@ -1335,7 +1359,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.ListBox warehouseIDlistBox;
-        private System.Windows.Forms.DateTimePicker shipDateTimePicker;
+        private System.Windows.Forms.DateTimePicker ship_date_TimePicker;
         private System.Windows.Forms.GroupBox advancedOptionsgroupBox;
         private System.Windows.Forms.TextBox billToPartyTextBox;
         private System.Windows.Forms.TextBox billtoCountrycodeTextBox;
@@ -1359,5 +1383,7 @@
         private System.Windows.Forms.TextBox CustomField1TextBox;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RichTextBox rateTestTextBox;
+        private System.Windows.Forms.Button getRatesButton;
     }
 }
