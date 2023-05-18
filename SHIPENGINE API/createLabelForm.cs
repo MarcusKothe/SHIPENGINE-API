@@ -620,6 +620,10 @@ namespace SHIPENGINE_API
 
             try
             {
+
+                Random logID = new Random();
+                string rateLogId = logID.Next(0, 1000000).ToString("D6");
+
                 //ShipTo Ojbect Variables
                 string service_code = this.service_code_TextBox.Text;
                 string carrier_code = carrier_id_TextBox.Text;
@@ -750,10 +754,10 @@ namespace SHIPENGINE_API
                 //API Key
                 string api_Key = apiKeyTextBox.Text;
                 request.Headers.Add("API-key", api_Key);
-                
 
+                #region Request
                 //POST REQUEST
-                string createLabelrequestBody = "{\r\n\"rate_options\": {\r\n  \"carrier_ids\": [\r\n    \"" + carrier_code + "\"\r\n  ]\r\n}," +
+                string rateRequestBody = "{\r\n\"rate_options\": {\r\n  \"carrier_ids\": [\r\n    \"" + carrier_code + "\"\r\n  ]\r\n}," +
                     "\r\n         \"shipment\": " +
                     "{\r\n        \"validate_address\": \"no_validation\"" +
                     ",\r\n        \"carrier_id\": \"" + "" + "\"" +
@@ -825,7 +829,7 @@ namespace SHIPENGINE_API
                     "\r\n                    \"currency\": \"usd\"," +
                     "\r\n                    \"amount\": 0.00\r\n                }," +
                     "\r\n                \"label_messages\": {" +
-                    "\r\n                    \"reference1\": null," +
+                    "\r\n                    \"reference1\": " + rateLogId + "," +
                     "\r\n                    \"reference2\": null," +
                     "\r\n                    \"reference3\": null" +
                     "\r\n                },\r\n                \"external_package_id\": 0" +
@@ -833,8 +837,10 @@ namespace SHIPENGINE_API
                     "\r\n    }" +
                     "\r\n}";
 
+                #endregion
+
                 ASCIIEncoding encoding = new ASCIIEncoding();
-                byte[] data = encoding.GetBytes(createLabelrequestBody);
+                byte[] data = encoding.GetBytes(rateRequestBody);
 
                 request.ContentType = "application/json";
                 request.ContentLength = data.Length;
@@ -844,6 +850,12 @@ namespace SHIPENGINE_API
                 stream.Write(data, 0, data.Length);
                 stream.Close();
 
+
+                // Set a variable to the Documents path REQUEST LOG
+                string docPath = @"..\..\Resources\Logs";
+                File.WriteAllText(Path.Combine(docPath, "Rate - " + rateLogId + ".txt"), rateRequestBody);
+
+
                 WebResponse requestResponse = request.GetResponse();
                 stream = requestResponse.GetResponseStream();
 
@@ -851,12 +863,14 @@ namespace SHIPENGINE_API
                 responseBodyrichTextbox.Text = parseResponse.ReadToEnd();
 
                 string responseBodyText = responseBodyrichTextbox.Text;
+                File.WriteAllText(Path.Combine(docPath, "Rate Response - " + rateLogId + ".txt"), responseBodyText);
 
                 int getRates1 = responseBodyText.IndexOf("\"shipping_amount\"") + "\"shipping_amount\"".Length;
                 int getRates2 = responseBodyText.LastIndexOf("\"insurance_amount\"");
                 stream.Close();
 
                 string getRates3 = responseBodyText.Substring(getRates1, getRates2 - getRates1);
+
 
                 using (var reader = new StringReader(responseBodyText))
                 {
@@ -883,7 +897,6 @@ namespace SHIPENGINE_API
                         {
 
                             ratesResponse += currentLine + Environment.NewLine;
-
 
                         }
                         else
